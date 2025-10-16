@@ -1,0 +1,18 @@
+nav {
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+}
+
+nav > * {
+    flex-grow: 1;
+}
+
+nav > .site-name {
+    display: none;
+}
+
+.nav-secondaries {
+    display: flex;
+    justify-content: space-between;
+}
