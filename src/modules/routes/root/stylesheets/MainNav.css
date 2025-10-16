@@ -1,0 +1,140 @@
+nav {
+    color: var(--navbar-text);
+    padding: 0.45rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav > .site-name {
+    font-size: var(--fs-md);
+    font-weight: 500;
+    user-select: none;
+}
+
+.site-name,
+.nav-links > a {
+    position: relative;
+}
+
+.site-name::before,
+.nav-links > a::before {
+    content: '';
+    background-color: var(--navbar-text);
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    height: 0.15rem;
+    transform-origin: center center;
+    transition: 0.2s ease-in-out;
+    transform: skewX(-45deg) scaleX(0);
+}
+
+.nav-links > a::before {
+    height: 0.1rem;
+}
+
+.site-name:hover::before,
+.nav-links > a:hover::before,
+.nav-links > a.currently-visited::before {
+    transform: skewX(-45deg) scaleX(1);
+}
+
+/* Hiding the link in layouts that don't render the full navbar (narrow screens) */
+.shop-link,
+.checkout-link {
+    display: none;
+}
+
+.nav-secondaries {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.nav-links > a {
+    font-size: var(--fs-base);
+    font-weight: 500;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav-icons > button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.25rem;
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+
+    transition: border 0.2s ease-in-out;
+}
+
+.nav-icons > button:hover {
+    border: 1px solid var(--navbar-text);
+}
+
+.nav-icons > button:active {
+    border: 1px solid transparent;
+}
+
+@media (min-width: 40rem) {
+    .nav-links {
+        display: flex;
+        gap: 0.5rem;
+        padding-right: 0.5rem;
+        border-right: 1px solid var(--navbar-text);
+    }
+
+    .shop-link,
+    .checkout-link {
+        display: inline;
+    }
+
+    .nav-icons > button.nav-menu-button {
+        display: none;
+    }
+
+    .nav-secondaries {
+        gap: 0.25rem;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 80rem) {
+    nav {
+        padding: 0.6rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        padding-right: 1rem;
+    }
+
+    .nav-icons {
+        gap: 0.75rem;
+    }
+
+    .nav-secondaries {
+        gap: 0.75rem;
+    }
+}
+
+@media (min-width: 96rem) {
+    nav {
+        padding: 0.8rem;
+    }
+
+    .nav-links {
+        gap: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .nav-secondaries {
+        gap: 1rem;
+    }
+}

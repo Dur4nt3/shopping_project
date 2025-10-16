@@ -1,0 +1,422 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test Suite For The Homepage Header > Renders the header (snapshot test) 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header>
+        <nav>
+          <h1
+            class="site-name"
+          >
+            <a
+              data-discover="true"
+              href="/"
+            >
+              Pseudo Shopper
+            </a>
+          </h1>
+          <div
+            class="nav-secondaries"
+          >
+            <div
+              class="nav-links"
+            >
+              <a
+                class="shop-link"
+                data-discover="true"
+                href="/shop"
+              >
+                Shop
+              </a>
+              <a
+                class="checkout-link"
+                data-discover="true"
+                href="/checkout"
+              >
+                Checkout
+              </a>
+            </div>
+            <div
+              class="nav-icons"
+            >
+              <button
+                aria-label="view cart"
+                class="icon-button nav-cart"
+              >
+                <img
+                  alt="view cart"
+                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+                />
+              </button>
+              <button
+                aria-label="change to light mode"
+                class="icon-button"
+              >
+                <img
+                  alt="change to light mode"
+                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-moon-icon%20lucide-moon'%3e%3cpath%20d='M20.985%2012.486a9%209%200%201%201-9.473-9.472c.405-.022.617.46.402.803a6%206%200%200%200%208.268%208.268c.344-.215.825-.004.803.401'/%3e%3c/svg%3e"
+                />
+              </button>
+              <button
+                aria-label="open navigation menu"
+                class="icon-button nav-menu-button"
+              >
+                <img
+                  alt="view cart"
+                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-menu-icon%20lucide-menu'%3e%3cpath%20d='M4%205h16'/%3e%3cpath%20d='M4%2012h16'/%3e%3cpath%20d='M4%2019h16'/%3e%3c/svg%3e"
+                />
+              </button>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="svg-wrap"
+        >
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+              style="width: 28.799999999999997px; height: 28.799999999999997px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+              style="width: 34.559999999999995px; height: 34.559999999999995px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+              style="width: 41.471999999999994px; height: 41.471999999999994px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+              style="width: 49.76639999999999px; height: 49.76639999999999px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+              style="width: 59.71967999999998px; height: 59.71967999999998px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+              style="width: 71.66361599999998px; height: 71.66361599999998px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+              style="width: 28.799999999999997px; height: 28.799999999999997px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+              style="width: 34.559999999999995px; height: 34.559999999999995px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+              style="width: 41.471999999999994px; height: 41.471999999999994px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+              style="width: 49.76639999999999px; height: 49.76639999999999px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+              style="width: 59.71967999999998px; height: 59.71967999999998px;"
+            />
+          </div>
+          <div>
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+              style="width: 71.66361599999998px; height: 71.66361599999998px;"
+            />
+          </div>
+        </div>
+        <div
+          class="header-main"
+        >
+          <h1
+            class="header-text1"
+          >
+            Pseudo
+          </h1>
+          <h1
+            class="header-text2"
+          >
+            Shopper
+          </h1>
+          <h3>
+            Made for every shopper.
+          </h3>
+          <a
+            data-discover="true"
+            href="/shop"
+          >
+            Shop Now
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-arrow-right-icon%20lucide-arrow-right'%3e%3cpath%20d='M5%2012h14'/%3e%3cpath%20d='m12%205%207%207-7%207'/%3e%3c/svg%3e"
+            />
+          </a>
+        </div>
+      </header>
+    </div>
+  </body>,
+  "container": <div>
+    <header>
+      <nav>
+        <h1
+          class="site-name"
+        >
+          <a
+            data-discover="true"
+            href="/"
+          >
+            Pseudo Shopper
+          </a>
+        </h1>
+        <div
+          class="nav-secondaries"
+        >
+          <div
+            class="nav-links"
+          >
+            <a
+              class="shop-link"
+              data-discover="true"
+              href="/shop"
+            >
+              Shop
+            </a>
+            <a
+              class="checkout-link"
+              data-discover="true"
+              href="/checkout"
+            >
+              Checkout
+            </a>
+          </div>
+          <div
+            class="nav-icons"
+          >
+            <button
+              aria-label="view cart"
+              class="icon-button nav-cart"
+            >
+              <img
+                alt="view cart"
+                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+              />
+            </button>
+            <button
+              aria-label="change to light mode"
+              class="icon-button"
+            >
+              <img
+                alt="change to light mode"
+                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-moon-icon%20lucide-moon'%3e%3cpath%20d='M20.985%2012.486a9%209%200%201%201-9.473-9.472c.405-.022.617.46.402.803a6%206%200%200%200%208.268%208.268c.344-.215.825-.004.803.401'/%3e%3c/svg%3e"
+              />
+            </button>
+            <button
+              aria-label="open navigation menu"
+              class="icon-button nav-menu-button"
+            >
+              <img
+                alt="view cart"
+                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-menu-icon%20lucide-menu'%3e%3cpath%20d='M4%205h16'/%3e%3cpath%20d='M4%2012h16'/%3e%3cpath%20d='M4%2019h16'/%3e%3c/svg%3e"
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="svg-wrap"
+      >
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+            style="width: 28.799999999999997px; height: 28.799999999999997px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+            style="width: 34.559999999999995px; height: 34.559999999999995px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+            style="width: 41.471999999999994px; height: 41.471999999999994px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+            style="width: 49.76639999999999px; height: 49.76639999999999px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+            style="width: 59.71967999999998px; height: 59.71967999999998px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+            style="width: 71.66361599999998px; height: 71.66361599999998px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+            style="width: 28.799999999999997px; height: 28.799999999999997px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+            style="width: 34.559999999999995px; height: 34.559999999999995px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+            style="width: 41.471999999999994px; height: 41.471999999999994px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+            style="width: 49.76639999999999px; height: 49.76639999999999px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+            style="width: 59.71967999999998px; height: 59.71967999999998px;"
+          />
+        </div>
+        <div>
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-basket-icon%20lucide-shopping-basket'%3e%3cpath%20d='m15%2011-1%209'/%3e%3cpath%20d='m19%2011-4-7'/%3e%3cpath%20d='M2%2011h20'/%3e%3cpath%20d='m3.5%2011%201.6%207.4a2%202%200%200%200%202%201.6h9.8a2%202%200%200%200%202-1.6l1.7-7.4'/%3e%3cpath%20d='M4.5%2015.5h15'/%3e%3cpath%20d='m5%2011%204-7'/%3e%3cpath%20d='m9%2011%201%209'/%3e%3c/svg%3e"
+            style="width: 71.66361599999998px; height: 71.66361599999998px;"
+          />
+        </div>
+      </div>
+      <div
+        class="header-main"
+      >
+        <h1
+          class="header-text1"
+        >
+          Pseudo
+        </h1>
+        <h1
+          class="header-text2"
+        >
+          Shopper
+        </h1>
+        <h3>
+          Made for every shopper.
+        </h3>
+        <a
+          data-discover="true"
+          href="/shop"
+        >
+          Shop Now
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-arrow-right-icon%20lucide-arrow-right'%3e%3cpath%20d='M5%2012h14'/%3e%3cpath%20d='m12%205%207%207-7%207'/%3e%3c/svg%3e"
+          />
+        </a>
+      </div>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

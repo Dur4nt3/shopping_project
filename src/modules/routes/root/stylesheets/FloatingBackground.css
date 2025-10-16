@@ -1,0 +1,113 @@
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+/*On smaller layouts this effect is obtrusive, therefore, only on tablets and above this effect is shown*/
+.svg-wrap {
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.svg-wrap div {
+    position: absolute;
+    animation: animate 14s linear infinite;
+}
+
+.svg-wrap div:nth-child(0) {
+    left: 17%;
+    bottom: -24.1%;
+    animation-delay: 1s;
+}
+.svg-wrap div:nth-child(1) {
+    left: 24%;
+    bottom: -21.3%;
+    animation-delay: 4s;
+}
+.svg-wrap div:nth-child(2) {
+    left: 86%;
+    bottom: -23.4%;
+    animation-delay: 8s;
+}
+.svg-wrap div:nth-child(3) {
+    left: 31%;
+    bottom: -22.7%;
+    animation-delay: 9s;
+}
+.svg-wrap div:nth-child(4) {
+    left: 89%;
+    bottom: -23.4%;
+    animation-delay: 1s;
+}
+.svg-wrap div:nth-child(5) {
+    left: 21%;
+    bottom: -21.3%;
+    animation-delay: 9s;
+}
+.svg-wrap div:nth-child(6) {
+    left: 27%;
+    bottom: -31.4%;
+    animation-delay: 14s;
+}
+.svg-wrap div:nth-child(7) {
+    left: 86%;
+    bottom: -26.4%;
+    animation-delay: 17s;
+}
+
+.svg-wrap div:nth-child(8) {
+    left: 22%;
+    bottom: -22.7%;
+    animation-delay: 1s;
+}
+.svg-wrap div:nth-child(9) {
+    left: 13%;
+    bottom: -24.8%;
+    animation-delay: 2s;
+}
+.svg-wrap div:nth-child(10) {
+    left: 33%;
+    bottom: -27.5%;
+    animation-delay: 1s;
+}
+.svg-wrap div:nth-child(11) {
+    left: 77%;
+    bottom: -24.7%;
+    animation-delay: 14s;
+}
+.svg-wrap div:nth-child(12) {
+    left: 29%;
+    bottom: -23.9%;
+    animation-delay: 13s;
+}
+.svg-wrap div:nth-child(13) {
+    left: 74%;
+    bottom: -34.6%;
+    animation-delay: 19s;
+}
+.svg-wrap div:nth-child(14) {
+    left: 91%;
+    bottom: -21.6%;
+    animation-delay: 21s;
+}
+
+@media (min-width: 40rem) {
+    .svg-wrap {
+        display: block;
+    }
+}

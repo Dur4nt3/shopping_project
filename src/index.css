@@ -1,4 +1,13 @@
-@import url(./assets/stylesheets/fonts.css);
+@font-face {
+    font-family: Nunito;
+    src: url(./assets/fonts/Nunito-Variable.woff2);
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url(./assets/fonts/Nunito-VariableItalic.woff2);
+    font-style: italic;
+}
 
 :root {
     --font-stack:
@@ -12,8 +21,70 @@
     --fs-xl: clamp(1.95rem, 1.43vi + 1.67rem, 2.81rem);
     --fs-xxl: clamp(2.44rem, 2.18vi + 2.01rem, 3.75rem);
     --fs-xxxl: clamp(3.05rem, 3.24vi + 2.4rem, 5rem);
+
+    color-scheme: light;
+
+    --text-main: #121212;
+    --text-alt: #f8fafc;
+    --background-color: #f7f8fa;
+    --primary-color: #023ad5;
+    --secondary-color: #3B3D54;
+    --accent-color: #051391;
+
+    --nav-menu-background: rgba(59, 61, 84, 0.925);
+    --header-background: #3B3D54;
+
+    --nav-menu-text: #f8fafc;
+    --navbar-text: #f8fafc;
+
+    --header-button-background: #121212;
+    --header-button-text: #f8fafc;
+
+    --highlights-border: rgba(18, 18, 18, 0.4);
+
+    --text-gradient: linear-gradient(90deg,rgba(0, 139, 214, 1) 25%, rgba(5, 77, 232, 1) 50%, rgba(6, 53, 184, 1) 75%);
+}
+
+:root:has(body.dark-mode) {
+    color-scheme: dark;
+
+    --text-main: #f8fafc;
+    --text-alt: #121212;
+    --background-color: #040609;
+    --primary-color: #042565;
+    --secondary-color: #1e3a8a;
+    --accent-color: #070358;
+
+    --nav-menu-background: rgba(47, 52, 71, 0.925);
+    --header-background: #2F3447;
+
+    --highlights-border: rgba(248, 250, 252, 0.225);
+
+    --text-gradient: linear-gradient(90deg,rgba(90, 194, 250, 1) 25%, rgba(67, 144, 232, 1) 50%, rgba(50, 123, 240, 1) 75%);
 }
 
 body {
-    font-family: var(--font-stack);
+    font-family: Nunito, var(--font-stack);
+    background-color: var(--background-color);
+    color: var(--text-main);
+}
+
+#root {
+    min-height: 100svh;
+    flex-direction: column;
+    display: flex;
+}
+
+.inline-img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hidden { 
+    display: none;
 }
