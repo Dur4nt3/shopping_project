@@ -1,7 +1,8 @@
 nav {
-    padding: 0.35rem;
+    padding: 0.45rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 nav > * {
@@ -9,10 +10,49 @@ nav > * {
 }
 
 nav > .site-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    user-select: none;
+}
+
+/* Hiding the link in layouts that don't render the full navbar (narrow screens) */
+.shop-link {
     display: none;
 }
 
 .nav-secondaries {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: end;
+}
+
+.nav-secondaries > a {
+    font-size: 1.45rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav-icons > button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.25rem;
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    
+    transition: border 0.2s ease-in-out;
+}
+.nav-icons > button:hover {
+    border: 1px solid var(--text-main);
+}
+
+/* Hiding the cart in layouts that don't render the full navbar (narrow screens) */
+/* In said layouts the cart is to be accessed through the menu */
+.nav-cart {
+    display: none;
 }

@@ -1,9 +1,7 @@
-import MainNav from './MainNav';
+import HomeHeader from './HomeHeader';
 
 export default function Root() {
-    return (
-        <>
-            <MainNav />
-        </>
-    );
+    return <>
+        <HomeHeader />
+    </>;
 }
