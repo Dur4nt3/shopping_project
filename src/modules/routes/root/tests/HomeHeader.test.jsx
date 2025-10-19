@@ -80,12 +80,12 @@ describe('Test Suite For The Navbar', () => {
 
         await user.click(menuButton);
 
-        // In smaller layouts (where the menu is visible) there an additional, hidden, shop link
-        // With the menu open, there should be 2
+        // In smaller layouts (where the menu is visible) there an additional, hidden, shop and checkout links
+        // With the menu open, there should be 2 of each
         expect(screen.getAllByRole('link', { name: 'Shop' }).length).toBe(2);
-        expect(
-            screen.getByRole('link', { name: 'Checkout' })
-        ).toBeInTheDocument();
+        expect(screen.getAllByRole('link', { name: 'Checkout' }).length).toBe(
+            2
+        );
 
         const closeButton = screen.getByRole('button', {
             name: /close navigation menu/i,
@@ -94,7 +94,9 @@ describe('Test Suite For The Navbar', () => {
         await user.click(closeButton);
 
         expect(screen.getAllByRole('link', { name: 'Shop' }).length).toBe(1);
-        expect(screen.queryByRole('link', { name: 'Checkout' })).toBeNull();
+        expect(screen.getAllByRole('link', { name: 'Checkout' }).length).toBe(
+            1
+        );
     });
 
     it('Can navigate to the shop from the menu', async () => {
@@ -128,7 +130,7 @@ describe('Test Suite For The Navbar', () => {
         ).toBeInTheDocument();
     });
 
-    it('Can navigate to the shop from the menu', async () => {
+    it('Can navigate to the checkout from the menu', async () => {
         expect.assertions(2);
 
         const router = createMemoryRouter(routes);
@@ -146,12 +148,10 @@ describe('Test Suite For The Navbar', () => {
 
         await user.click(menuButton);
 
-        // Ensure we are picking the correct link
-        // We already know it appears when the menu is open
-        // So now we can use the test-id to target it specifically
-        const checkoutLink = screen.getByRole('link', { name: 'Checkout'});
+        // Same strategy as with the shop test case above
+        const shopLink = screen.getByTestId('menu-checkout-link');
 
-        await user.click(checkoutLink);
+        await user.click(shopLink);
 
         expect(router.state.location.pathname).toBe('/checkout');
         expect(
@@ -162,3 +162,4 @@ describe('Test Suite For The Navbar', () => {
 
 // TODO
 // Write a test for checking whether or not you can view the cart when clicking the cart icon
+// Ensure you can navigate from a non-root location (shop, item, etc.) back to root ('/') by clicking the site name on the navbar

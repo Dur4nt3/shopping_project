@@ -26,11 +26,20 @@ export default function MainNav() {
                 <Link to='/'>Pseudo Shopper</Link>
             </h1>
             <div className='nav-secondaries'>
-                <Link to='/shop' className='shop-link'>
-                    Shop
-                </Link>
+                <div className='nav-links'>
+                    <Link to='/shop' className='shop-link'>
+                        Shop
+                    </Link>
+                    <Link to='/checkout' className='checkout-link'>
+                        Checkout
+                    </Link>
+                </div>
+
                 <div className='nav-icons'>
-                    <button className='icon-button nav-cart' aria-label='view cart'>
+                    <button
+                        className='icon-button nav-cart'
+                        aria-label='view cart'
+                    >
                         {theme === 'light' ? (
                             <img src={cartLightSvg} alt='view cart' />
                         ) : (

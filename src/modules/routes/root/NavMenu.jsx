@@ -33,7 +33,7 @@ export default function NavMenu({ setMenuStatus }) {
             </button>
             <div className='nav-menu-inner'>
                 <Link to='/shop' data-testid='menu-shop-link'>Shop</Link>
-                <Link to='/checkout'>Checkout</Link>
+                <Link to='/checkout' data-testid='menu-checkout-link'>Checkout</Link>
             </div>
         </div>
     );
