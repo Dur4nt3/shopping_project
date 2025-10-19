@@ -47,12 +47,17 @@ nav > .site-name {
     
     transition: border 0.2s ease-in-out;
 }
+
 .nav-icons > button:hover {
     border: 1px solid var(--text-main);
 }
 
-/* Hiding the cart in layouts that don't render the full navbar (narrow screens) */
-/* In said layouts the cart is to be accessed through the menu */
-.nav-cart {
-    display: none;
+.nav-icons > button:active {
+    border: 1px solid transparent;
+}
+
+@media (min-width: 64rem) {
+    .nav-icons > button.nav-menu-button {
+        display: none;
+    }
 }

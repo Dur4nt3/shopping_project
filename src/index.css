@@ -30,6 +30,9 @@
     --primary-color: #073bcb;
     --secondary-color: #7ce4fe;
     --accent-color: #3fa9f9;
+
+    --nav-menu-background: rgba(7, 59, 203, 0.875);
+    --nav-menu-text: #f8fafc;
 }
 
 :root:has(body.dark-mode) {
@@ -41,6 +44,8 @@
     --primary-color: #53b1fe;
     --secondary-color: #1e3a8a;
     --accent-color: #60a5fa;
+
+    --nav-menu-background: rgba(30, 58, 138, 0.875);
 }
 
 body {
@@ -63,4 +68,8 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.hidden { 
+    display: none;
 }

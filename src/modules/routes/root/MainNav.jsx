@@ -1,6 +1,8 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router';
 import { Theme } from '../../utilities/Theme';
+
+import NavMenu from './NavMenu';
 
 import sunSvg from '../../../assets/media/icons/general/light-mode.svg';
 import moonSvg from '../../../assets/media/icons/general/dark-mode.svg';
@@ -13,16 +15,30 @@ import './stylesheets/MainNav.css';
 
 export default function MainNav() {
     const { theme, toggleTheme } = useContext(Theme);
+    const [menuOpen, setMenuStatus] = useState(false);
+
+    const nextThemeName = theme === 'light' ? 'dark mode' : 'light mode';
 
     return (
         <nav>
-            <h1 className='site-name'>Pseudo Shopper</h1>
+            {menuOpen && <NavMenu setMenuStatus={setMenuStatus} />}
+            <h1 className='site-name'>
+                <Link to='/'>Pseudo Shopper</Link>
+            </h1>
             <div className='nav-secondaries'>
                 <Link to='/shop' className='shop-link'>
                     Shop
                 </Link>
                 <div className='nav-icons'>
+                    <button className='icon-button nav-cart' aria-label='view cart'>
+                        {theme === 'light' ? (
+                            <img src={cartLightSvg} alt='view cart' />
+                        ) : (
+                            <img src={cartDarkSvg} alt='view cart' />
+                        )}
+                    </button>
                     <button
+                        aria-label={`change to ${nextThemeName}`}
                         className='icon-button'
                         onClick={() => {
                             theme === 'light'
@@ -37,14 +53,15 @@ export default function MainNav() {
                             <img src={moonSvg} alt='change to light mode' />
                         )}
                     </button>
-                    <button className='icon-button nav-cart'>
-                        {theme === 'light' ? (
-                            <img src={cartLightSvg} alt='view cart' />
-                        ) : (
-                            <img src={cartDarkSvg} alt='view cart' />
-                        )}
-                    </button>
-                    <button className='icon-button nav-menu'>
+                    <button
+                        aria-label='open navigation menu'
+                        className='icon-button nav-menu-button'
+                        onClick={() => {
+                            if (menuOpen === false) {
+                                setMenuStatus(true);
+                            }
+                        }}
+                    >
                         {theme === 'light' ? (
                             <img src={menuLightSvg} alt='view cart' />
                         ) : (
