@@ -72,7 +72,7 @@ export default defineConfig([
       "default-param-last": "error",
       "prefer-spread": "error",
       "prefer-arrow-callback": "error",
-      "arrow-body-style": ["error", "as-needed"],
+      "arrow-body-style": ["warn", "as-needed"],
       "no-useless-constructor": "error",
       "class-methods-use-this": "error",
       "no-duplicate-imports": "error",

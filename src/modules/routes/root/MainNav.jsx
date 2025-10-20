@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 import { Theme } from '../../utilities/Theme';
 
 import NavMenu from './NavMenu';
@@ -23,16 +23,37 @@ export default function MainNav() {
         <nav>
             {menuOpen && <NavMenu setMenuStatus={setMenuStatus} />}
             <h1 className='site-name'>
-                <Link to='/'>Pseudo Shopper</Link>
+                <NavLink
+                    to='/'
+                    className={({ isActive }) =>
+                        isActive && 'currently-visited'
+                    }
+                >
+                    Pseudo Shopper
+                </NavLink>
             </h1>
             <div className='nav-secondaries'>
                 <div className='nav-links'>
-                    <Link to='/shop' className='shop-link'>
+                    <NavLink
+                        to='/shop'
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'shop-link currently-visited'
+                                : 'shop-link'
+                        }
+                    >
                         Shop
-                    </Link>
-                    <Link to='/checkout' className='checkout-link'>
+                    </NavLink>
+                    <NavLink
+                        to='/checkout'
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'checkout-link currently-visited'
+                                : 'checkout-link'
+                        }
+                    >
                         Checkout
-                    </Link>
+                    </NavLink>
                 </div>
 
                 <div className='nav-icons'>

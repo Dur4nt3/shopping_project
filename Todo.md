@@ -39,3 +39,16 @@
 
 1) Make the navbar sticky (ensure it sticks to the top and its z-index is above all other elements)
 2) Implement the cart button functionality (i.e., opening a cart modal when clicking the cart icon)
+
+**HomeMain.jsx:**
+
+1) Create a "features highlights" section with the following segments:
+
+    - Authentic Gear Only | 100% verified products straight from top brands
+    *Icons: 1) https://www.svgrepo.com/svg/362151/sign-check 2) https://lucide.dev/icons/shield-check*
+
+    - Easy Returns | Changed your mind? No problem. Hassle-free returns within 30 days.
+    *Icons: 1) https://www.svgrepo.com/svg/362159/sign-sync 2) https://lucide.dev/icons/undo-dot 3) https://lucide.dev/icons/repeat*
+
+    - Fast Shipping Worldwide | Wherever you are, we’ll get it to your doorstep quick.
+    *Icons: 1) https://www.svgrepo.com/svg/362105/globe 2) https://lucide.dev/icons/globe*

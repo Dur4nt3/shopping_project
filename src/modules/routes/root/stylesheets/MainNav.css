@@ -36,7 +36,9 @@ nav > .site-name {
 }
 
 .site-name:hover::before,
-.nav-links > a:hover::before {
+.nav-links > a:hover::before,
+.site-name:has(.currently-visited)::before,
+.nav-links > a.currently-visited::before {
     transform: skewX(-45deg) scaleX(1);
 }
 
