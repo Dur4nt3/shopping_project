@@ -27,9 +27,9 @@
     --text-main: #121212;
     --text-alt: #f8fafc;
     --background-color: #f7f8fa;
-    --primary-color: #073bcb;
-    --secondary-color: #7ce4fe;
-    --accent-color: #3fa9f9;
+    --primary-color: #023ad5;
+    --secondary-color: #3B3D54;
+    --accent-color: #051391;
 
     --nav-menu-background: rgba(7, 59, 203, 0.875);
     --nav-menu-text: #f8fafc;
@@ -41,9 +41,9 @@
     --text-main: #f8fafc;
     --text-alt: #121212;
     --background-color: #040609;
-    --primary-color: #53b1fe;
+    --primary-color: #042565;
     --secondary-color: #1e3a8a;
-    --accent-color: #60a5fa;
+    --accent-color: #070358;
 
     --nav-menu-background: rgba(30, 58, 138, 0.875);
 }
