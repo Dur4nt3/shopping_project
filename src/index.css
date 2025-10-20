@@ -31,8 +31,14 @@
     --secondary-color: #3B3D54;
     --accent-color: #051391;
 
-    --nav-menu-background: rgba(7, 59, 203, 0.875);
+    --nav-menu-background: rgba(59, 61, 84, 0.925);
+    --header-background: #3B3D54;
+
     --nav-menu-text: #f8fafc;
+    --navbar-text: #f8fafc;
+
+    --header-button-background: #121212;
+    --header-button-text: #f8fafc;
 }
 
 :root:has(body.dark-mode) {
@@ -45,7 +51,8 @@
     --secondary-color: #1e3a8a;
     --accent-color: #070358;
 
-    --nav-menu-background: rgba(30, 58, 138, 0.875);
+    --nav-menu-background: rgba(47, 52, 71, 0.925);
+    --header-background: #2F3447;
 }
 
 body {

@@ -1,4 +1,5 @@
 nav {
+    color: var(--navbar-text);
     padding: 0.45rem;
     display: flex;
     align-items: center;
@@ -19,7 +20,7 @@ nav > .site-name {
 .site-name::before,
 .nav-links > a::before {
     content: '';
-    background-color: var(--text-main);
+    background-color: var(--navbar-text);
     width: 100%;
     position: absolute;
     bottom: 10%;
@@ -73,7 +74,7 @@ nav > .site-name {
 }
 
 .nav-icons > button:hover {
-    border: 1px solid var(--text-main);
+    border: 1px solid var(--navbar-text);
 }
 
 .nav-icons > button:active {
@@ -85,7 +86,7 @@ nav > .site-name {
         display: flex;
         gap: 0.5rem;
         padding-right: 0.5rem;
-        border-right: 1px solid var(--text-main);
+        border-right: 1px solid var(--navbar-text);
     }
 
     .shop-link,
@@ -111,6 +112,10 @@ nav > .site-name {
     .nav-links {
         gap: 1rem;
         padding-right: 1rem;
+    }
+
+    .nav-icons {
+        gap: 0.75rem;
     }
 
     .nav-secondaries {
