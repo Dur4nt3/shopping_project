@@ -1,0 +1,13 @@
+footer {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 40rem) {
+    footer {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+}

@@ -2,6 +2,13 @@
 
 ## Tests
 
+### Misc
+
+**Theme.test.jsx:**
+
+1) Add a test to check if the theme is correctly changed to dark when a user's preferred color scheme is dark
+*Check that the context is adjust correctly to "dark" and that document.body has the class "dark-mode".*
+
 ### Root
 
 **MainNav.test.jsx:**
@@ -26,6 +33,11 @@
 ## Design/Creation
 
 ### Misc
+
+**Theme.jsx:**
+
+1) Uncomment automatic theme adjustment
+
 
 **RootError.jsx:**
 

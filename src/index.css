@@ -39,6 +39,10 @@
 
     --header-button-background: #121212;
     --header-button-text: #f8fafc;
+
+    --highlights-border: rgba(18, 18, 18, 0.4);
+
+    --text-gradient: linear-gradient(90deg,rgba(0, 139, 214, 1) 25%, rgba(5, 77, 232, 1) 50%, rgba(6, 53, 184, 1) 75%);
 }
 
 :root:has(body.dark-mode) {
@@ -53,6 +57,10 @@
 
     --nav-menu-background: rgba(47, 52, 71, 0.925);
     --header-background: #2F3447;
+
+    --highlights-border: rgba(248, 250, 252, 0.225);
+
+    --text-gradient: linear-gradient(90deg,rgba(90, 194, 250, 1) 25%, rgba(67, 144, 232, 1) 50%, rgba(50, 123, 240, 1) 75%);
 }
 
 body {
