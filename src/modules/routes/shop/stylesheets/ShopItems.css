@@ -1,0 +1,108 @@
+.shop-items-grid {
+    padding: 1rem;
+    flex-grow: 1;
+
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    grid-auto-rows: 1fr;
+    gap: 1.5rem;
+}
+
+.item-cont {
+    max-width: 400px;
+
+    padding: 0.75rem;
+    border: 1px solid var(--filter-button-border);
+    border-radius: 0.35rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    text-align: left;
+    font-size: var(--fs-base);
+    font-weight: 700;
+}
+
+.item-category {
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+    font-size: var(--fs-sm);
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.item-img {
+    margin-top: auto;
+    margin-bottom: 1rem;
+    align-self: center;
+    object-fit: contain;
+    width: 240px;
+    height: 180px;
+}
+
+.rating-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-bottom: 0.5rem;
+}
+
+.rating-count {
+    font-size: var(--fs-sm);
+}
+
+.item-count-cont {
+    margin-top: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.item-count-cont > .increment-order-count,
+.item-count-cont > .decrement-order-count {
+    cursor: pointer;
+    width: 2rem;
+    border-radius: 0.35rem;
+    border: 1px solid var(--filter-button-border);
+    background-color: var(--filter-button-background);
+}
+
+.item-count-cont > .increment-order-count:hover,
+.item-count-cont > .decrement-order-count:hover {
+    border: 1px solid var(--filter-button-hover-border);
+    background-color: var(--filter-button-hover-background);
+}
+
+button.add-to-cart {
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 0.15rem 0;
+    border-radius: 0.25rem;
+    color: var(--navbar-text);
+    border: none;
+    background: var(--header-background);
+}
+
+button.add-to-cart:hover {
+    filter: brightness(1.075);
+}
+
+@media (min-width: 40rem) {
+    .shop-items-grid {
+        margin-top: 0.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+@media (min-width: 48rem) {
+    .shop-items-grid {
+        padding: 1rem 1.5rem;
+    }
+}

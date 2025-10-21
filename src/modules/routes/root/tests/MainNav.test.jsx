@@ -100,7 +100,7 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Can navigate to the shop from the menu', async () => {
-        expect.assertions(2);
+        expect.assertions(3);
 
         const router = createMemoryRouter(routes);
         const user = userEvent.setup();
@@ -126,12 +126,15 @@ describe('Test Suite For The Navbar', () => {
 
         expect(router.state.location.pathname).toBe('/shop');
         expect(
-            screen.getByRole('heading', { name: 'This is the shop page' })
+            screen.getByRole('heading', { name: 'Shop' })
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole('heading', { name: 'Fresh finds, just for you.' })
         ).toBeInTheDocument();
     });
 
     it('Can navigate to the checkout from the menu', async () => {
-        expect.assertions(2);
+        expect.assertions(3);
 
         const router = createMemoryRouter(routes);
         const user = userEvent.setup();
@@ -155,7 +158,10 @@ describe('Test Suite For The Navbar', () => {
 
         expect(router.state.location.pathname).toBe('/checkout');
         expect(
-            screen.getByRole('heading', { name: 'This is the checkout page' })
+            screen.getByRole('heading', { name: 'Checkout' })
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole('heading', { name: 'Almost yours, just one step away.' })
         ).toBeInTheDocument();
     });
 });

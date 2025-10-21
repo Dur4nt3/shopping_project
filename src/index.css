@@ -28,11 +28,11 @@
     --text-alt: #f8fafc;
     --background-color: #f7f8fa;
     --primary-color: #023ad5;
-    --secondary-color: #3B3D54;
+    --secondary-color: #3b3d54;
     --accent-color: #051391;
 
     --nav-menu-background: rgba(59, 61, 84, 0.925);
-    --header-background: #3B3D54;
+    --header-background: #3b3d54;
 
     --nav-menu-text: #f8fafc;
     --navbar-text: #f8fafc;
@@ -42,7 +42,26 @@
 
     --highlights-border: rgba(18, 18, 18, 0.4);
 
-    --text-gradient: linear-gradient(90deg,rgba(0, 139, 214, 1) 25%, rgba(5, 77, 232, 1) 50%, rgba(6, 53, 184, 1) 75%);
+    --text-gradient: linear-gradient(
+        90deg,
+        rgba(0, 139, 214, 1) 25%,
+        rgba(5, 77, 232, 1) 50%,
+        rgba(6, 53, 184, 1) 75%
+    );
+
+    --filter-button-background: #f6f7fb;
+    --filter-button-hover-background: #edeff8;
+
+    --filter-button-border: #c7c8d9;
+    --filter-button-hover-border: #c3c6e0;
+
+    --filter-cont-border: #bfc1d3;
+    --filter-cont-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+    --cancel-red: #8f0000;
+    --confirm-green: #00c71b;
+
+    --input-placeholder: #3b3d54;
 }
 
 :root:has(body.dark-mode) {
@@ -56,11 +75,29 @@
     --accent-color: #070358;
 
     --nav-menu-background: rgba(47, 52, 71, 0.925);
-    --header-background: #2F3447;
+    --header-background: #2f3447;
 
     --highlights-border: rgba(248, 250, 252, 0.225);
 
-    --text-gradient: linear-gradient(90deg,rgba(90, 194, 250, 1) 25%, rgba(67, 144, 232, 1) 50%, rgba(50, 123, 240, 1) 75%);
+    --text-gradient: linear-gradient(
+        90deg,
+        rgba(90, 194, 250, 1) 25%,
+        rgba(67, 144, 232, 1) 50%,
+        rgba(50, 123, 240, 1) 75%
+    );
+
+    --filter-button-background: #0a0c12;
+    --filter-button-hover-background: #12151d;
+
+    --filter-button-border: #2a2d3a;
+    --filter-button-hover-border: #3e4252;
+
+    --filter-cont-border: #313344;
+    --filter-cont-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.95);
+
+    --cancel-red: #780000;
+
+    --input-placeholder: #555A78;
 }
 
 body {
@@ -85,6 +122,22 @@ a {
     color: inherit;
 }
 
-.hidden { 
+/* Josh Comeau's breaks ant design's "Rate" component, this fixes the issue */
+.ant-rate svg {
+    display: inline-block;
+    max-width: none;
+    width: 1em;
+    height: 1em;
+}
+
+body:has(header > nav > .nav-menu) {
+    overflow: hidden;
+}
+
+button { 
+    cursor: pointer;
+}
+
+.hidden {
     display: none;
 }

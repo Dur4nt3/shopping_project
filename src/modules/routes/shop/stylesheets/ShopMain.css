@@ -1,0 +1,99 @@
+.shop-main {
+    padding: 0;
+    margin-top: 0;
+
+    position: relative;
+}
+
+.shop-main:has(.loading-cont),
+.shop-main:has(.error-cont) {
+    display: grid;
+    place-items: center;
+}
+
+.shop-main:has(.no-items-notice) {
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-loader {
+    margin-bottom: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background:
+        radial-gradient(farthest-side, var(--header-background) 94%, #0000)
+            top/8px 8px no-repeat,
+        conic-gradient(#0000 30%, var(--header-background));
+    -webkit-mask: radial-gradient(
+        farthest-side,
+        #0000 calc(100% - 8px),
+        #000 0
+    );
+    mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+    animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.error-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-cont > img,
+.no-items-cont > img {
+    width: 3rem;
+    height: 3rem;
+
+    margin-bottom: 0.5rem;
+}
+
+.no-items-cont {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-items-cont > h4 {
+    font-weight: 400;
+}
+
+@media (min-width: 40rem) {
+    .loading-cont > h3,
+    .error-cont > h3,
+    .no-items-cont > h3 {
+        font-size: var(--fs-lg);
+    }
+
+    .custom-loader {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .error-cont > img,
+    .no-items-cont > img {
+        width: 4rem;
+        height: 4rem;
+
+        margin-bottom: 1rem;
+    }
+
+    .no-items-cont > h4 {
+        font-size: var(--fs-base);
+    }
+}

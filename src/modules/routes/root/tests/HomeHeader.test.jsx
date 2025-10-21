@@ -28,12 +28,11 @@ describe('Test Suite For The Homepage Header', () => {
 
         const container = render(<RouterProvider router={router} />);
 
-        screen.debug();
         expect(container).toMatchSnapshot();
     });
 
     it('Navigates to the shop using the header button', async () => {
-        expect.assertions(2);
+        expect.assertions(3);
 
         const router = createMemoryRouter(routes);
         const user = userEvent.setup();
@@ -48,7 +47,10 @@ describe('Test Suite For The Homepage Header', () => {
 
         expect(router.state.location.pathname).toBe('/shop');
         expect(
-            screen.getByRole('heading', { name: 'This is the shop page' })
+            screen.getByRole('heading', { name: 'Shop' })
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole('heading', { name: 'Fresh finds, just for you.' })
         ).toBeInTheDocument();
     });
 });

@@ -26,7 +26,7 @@ export default function MainNav() {
                 <NavLink
                     to='/'
                     className={({ isActive }) =>
-                        isActive && 'currently-visited'
+                        isActive ? 'currently-visited' : ''
                     }
                 >
                     Pseudo Shopper
