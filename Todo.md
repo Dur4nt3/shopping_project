@@ -9,6 +9,8 @@
 1) Add a test to check if the theme is correctly changed to dark when a user's preferred color scheme is dark
 *Check that the context is adjust correctly to "dark" and that document.body has the class "dark-mode".*
 
+---------
+
 ### Root
 
 **MainNav.test.jsx:**
@@ -38,6 +40,7 @@
 
 1) Uncomment automatic theme adjustment
 
+---------
 
 **RootError.jsx:**
 
@@ -64,3 +67,18 @@
 
     - Fast Shipping Worldwide | Wherever you are, we’ll get it to your doorstep quick.
     *Icons: 1) https://www.svgrepo.com/svg/362105/globe 2) https://lucide.dev/icons/globe*
+
+---------
+
+### Shop
+
+**ShopFilters.jsx:**
+
+A slide in overlay that when minimized only shows the icons, but when the user click any of the icons it expands to show the filters.
+
+Notes:
+1) Absolutely position the overlay and anchor it to the "main" element
+2) It is still desired to have a grid setup so the container that holds the items themselves is aware that the sidebar/overlay is there.
+*i.e., the width of the container with the items is adjusted with screen width but can never by bigger the the parent container's width - minimized overlay width.*
+
+
