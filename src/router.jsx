@@ -7,6 +7,8 @@ import Checkout from './modules/routes/checkout/Checkout';
 
 import RootError from './modules/routes/root/RootError';
 
+import shopLoader from './modules/utilities/loaders/shopLoader';
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
     {
         path: 'shop',
         element: <Shop />,
+        loader: shopLoader,
     },
     {
         path: 'item/:itemId',
