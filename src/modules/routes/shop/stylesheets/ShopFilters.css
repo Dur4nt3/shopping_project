@@ -1,0 +1,40 @@
+.shop-filters-cont {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 0.35rem;
+
+    border-bottom: 1px solid var(--filter-cont-border);
+    box-shadow: var(--filter-cont-box-shadow);
+}
+
+.filter-buttons {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 0.35rem;
+}
+
+.filter-buttons:has( + .filter-content > *) {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--filter-cont-border);
+    margin-bottom: 0.5rem;
+}
+
+.filter-buttons > button {
+    cursor: pointer;
+    padding: 0.15rem 0rem;
+    background-color: var(--filter-button-background);
+    border: 1px solid var(--filter-button-border);
+    border-radius: 0.4rem;
+}
+
+.filter-buttons > button:not(.active-filter):hover {
+    background-color: var(--filter-button-hover-background);
+    border: 1px solid var(--filter-button-hover-border);
+}
+
+.filter-buttons > button.active-filter {
+    color: var(--navbar-text);
+    background-color: var(--header-background);
+}

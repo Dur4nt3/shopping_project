@@ -2,12 +2,12 @@ import ShopItems from './ShopItems';
 import ShopFilters from './ShopFilters';
 import ShopLoadingError from './ShopLoadingError';
 
-import './stylesheets/ShopMain.css'
+import './stylesheets/ShopMain.css';
 
-export default function ShopMain({ items, status, filters }) {
+export default function ShopMain({ items, status, filters, setFilters }) {
     return (
         <main className='shop-main'>
-            <ShopFilters filters={filters} />
+            <ShopFilters filters={filters} setFilters={setFilters} />
             {items === null ? (
                 <ShopLoadingError status={status} />
             ) : (

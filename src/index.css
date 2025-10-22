@@ -28,11 +28,11 @@
     --text-alt: #f8fafc;
     --background-color: #f7f8fa;
     --primary-color: #023ad5;
-    --secondary-color: #3B3D54;
+    --secondary-color: #3b3d54;
     --accent-color: #051391;
 
     --nav-menu-background: rgba(59, 61, 84, 0.925);
-    --header-background: #3B3D54;
+    --header-background: #3b3d54;
 
     --nav-menu-text: #f8fafc;
     --navbar-text: #f8fafc;
@@ -42,7 +42,21 @@
 
     --highlights-border: rgba(18, 18, 18, 0.4);
 
-    --text-gradient: linear-gradient(90deg,rgba(0, 139, 214, 1) 25%, rgba(5, 77, 232, 1) 50%, rgba(6, 53, 184, 1) 75%);
+    --text-gradient: linear-gradient(
+        90deg,
+        rgba(0, 139, 214, 1) 25%,
+        rgba(5, 77, 232, 1) 50%,
+        rgba(6, 53, 184, 1) 75%
+    );
+
+    --filter-button-background: #F6F7FB;
+    --filter-button-hover-background: #EDEFF8;
+    
+    --filter-button-border: #C7C8D9;
+    --filter-button-hover-border: #C3C6E0;
+
+    --filter-cont-border: #BFC1D3;
+    --filter-cont-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 :root:has(body.dark-mode) {
@@ -56,11 +70,25 @@
     --accent-color: #070358;
 
     --nav-menu-background: rgba(47, 52, 71, 0.925);
-    --header-background: #2F3447;
+    --header-background: #2f3447;
 
     --highlights-border: rgba(248, 250, 252, 0.225);
 
-    --text-gradient: linear-gradient(90deg,rgba(90, 194, 250, 1) 25%, rgba(67, 144, 232, 1) 50%, rgba(50, 123, 240, 1) 75%);
+    --text-gradient: linear-gradient(
+        90deg,
+        rgba(90, 194, 250, 1) 25%,
+        rgba(67, 144, 232, 1) 50%,
+        rgba(50, 123, 240, 1) 75%
+    );
+
+    --filter-button-background: #0A0C12;
+    --filter-button-hover-background: #12151D;
+
+    --filter-button-border: #2A2D3A;
+    --filter-button-hover-border: #3E4252;
+
+    --filter-cont-border: #313344;
+    --filter-cont-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.95);
 }
 
 body {
@@ -85,6 +113,6 @@ a {
     color: inherit;
 }
 
-.hidden { 
+.hidden {
     display: none;
 }

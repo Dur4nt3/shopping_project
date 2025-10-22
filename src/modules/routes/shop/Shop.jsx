@@ -15,7 +15,12 @@ export default function Shop() {
     return (
         <>
             <ShopHeader />
-            <ShopMain items={currentItems} status={status} filters={filters} />
+            <ShopMain
+                items={currentItems}
+                status={status}
+                filters={filters}
+                setFilters={setFilters}
+            />
         </>
     );
 }
