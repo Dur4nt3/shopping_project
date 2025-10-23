@@ -61,10 +61,12 @@
 
 **ShopFilters.jsx:**
 
-Wide layout implementation:
-*only relevant for layout where all the secondary filter content can fit in one row*
+1) Implement a variant for wide layouts:
+    *only relevant for layout where all the secondary filter content can fit in one row*
+    1) Stack the filter choices and their content in the same level (flex container with a row direction rather than a column direction)
+    2) Align the filters to the left and their content will be displayed near the 3 filter selectors with a rather large gap in-between
 
-1) Stack the filter choices and their content in the same level (flex container with a row direction rather than a column direction)
-2) Align the filters to the left and their content will be displayed near the 3 filter selectors with a rather large gap in-between
+2) Implement a activate/deactivate & reset filter buttons:
+    Two buttons, one that allows to activate and deactivate the filter (retains the data), and one that resets the filter data
 
 
