@@ -1,41 +1,50 @@
 import { useState } from 'react';
-import {
-    PriceFilter,
-    CategoryFilter,
-    RatingFilter,
-} from './tests/ShopFIlterTypes';
+import ShopPriceFilter from './ShopPriceFilter';
+import ShopCategoryFilter from './ShopCategoryFilter';
+import ShopRatingFilter from './ShopRatingFilter';
 
 import './stylesheets/ShopFilters.css';
 
-function selectedFilter(activeFilter, filters, setFilters) {
+function selectedFilter(
+    activeFilter,
+    filters,
+    handleFilterAssignment,
+    categories
+) {
     if (activeFilter.name === 'price') {
         return (
-            <PriceFilter
-                currentPriceFilter={filters.price}
-                setFilters={setFilters}
+            <ShopPriceFilter
+                currentPriceFilter={filters.price.data}
+                handleFilterAssignment={handleFilterAssignment}
             />
         );
     }
     if (activeFilter.name === 'category') {
         return (
-            <CategoryFilter
-                currentCategoryFilter={filters.price}
-                setFilters={setFilters}
+            <ShopCategoryFilter
+                currentCategoryFilter={filters.category.data}
+                handleFilterAssignment={handleFilterAssignment}
+                categories={categories}
             />
         );
     }
 
     if (activeFilter.name === 'rating') {
         return (
-            <RatingFilter
-                currentRatingFilter={filters.price}
-                setFilters={setFilters}
+            <ShopRatingFilter
+                currentRatingFilter={filters.rating.data}
+                handleFilterAssignment={handleFilterAssignment}
             />
         );
     }
 }
 
-export default function ShopFilters({ filters, setFilters }) {
+export default function ShopFilters({
+    filters,
+    handleFilterAssignment,
+    categories,
+}) {
+
     const [activeFilter, setActiveFilter] = useState({
         name: null,
         domNode: null,
@@ -88,7 +97,12 @@ export default function ShopFilters({ filters, setFilters }) {
                 </button>
             </div>
             <div className='filter-content'>
-                {selectedFilter(activeFilter, filters, setFilters)}
+                {selectedFilter(
+                    activeFilter,
+                    filters,
+                    handleFilterAssignment,
+                    categories
+                )}
             </div>
         </div>
     );
