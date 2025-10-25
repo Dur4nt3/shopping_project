@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router';
 import ShopPriceFilter from './ShopPriceFilter';
 import ShopCategoryFilter from './ShopCategoryFilter';
 import ShopRatingFilter from './ShopRatingFilter';
@@ -6,18 +7,21 @@ import ShopRatingFilter from './ShopRatingFilter';
 import './stylesheets/ShopFilters.css';
 
 function selectedFilter(
-    activeFilter,
     filters,
-    toggleFilter,
-    categories
+    categories,
+    activeFilter,
+    applyFilter,
+    activateFilter,
+    deactivateFilter
 ) {
-
     if (activeFilter.name === 'price') {
         return (
             <ShopPriceFilter
                 currentPriceFilter={filters.price.data}
                 applied={filters.price.applied}
-                toggleFilter={toggleFilter}
+                applyFilter={applyFilter}
+                activateFilter={activateFilter}
+                deactivateFilter={deactivateFilter}
             />
         );
     }
@@ -26,8 +30,10 @@ function selectedFilter(
             <ShopCategoryFilter
                 currentCategoryFilter={filters.category.data}
                 applied={filters.category.applied}
-                toggleFilter={toggleFilter}
                 categories={categories}
+                applyFilter={applyFilter}
+                activateFilter={activateFilter}
+                deactivateFilter={deactivateFilter}
             />
         );
     }
@@ -37,18 +43,17 @@ function selectedFilter(
             <ShopRatingFilter
                 currentRatingFilter={filters.rating.data}
                 applied={filters.rating.applied}
-                toggleFilter={toggleFilter}
+                applyFilter={applyFilter}
+                activateFilter={activateFilter}
+                deactivateFilter={deactivateFilter}
             />
         );
     }
 }
 
-export default function ShopFilters({
-    filters,
-    toggleFilter,
-    categories,
-}) {
-
+export default function ShopFilters({ filters, toggleFilter, categories }) {
+    // eslint-disable-next-line no-unused-vars
+    const [searchParams, setSearchParams] = useSearchParams();
     const [activeFilter, setActiveFilter] = useState({
         name: null,
         domNode: null,
@@ -73,6 +78,33 @@ export default function ShopFilters({
         }
 
         setActiveFilter(newActiveFilter);
+    }
+
+    function applyFilter(name, value) {
+        if (value !== null) {
+            setSearchParams((searchParams) => {
+                searchParams.set(name, encodeURIComponent(value));
+                return searchParams;
+            });
+        }
+    }
+
+    function activateFilter(name, value) {
+        if (value !== null) {
+            setSearchParams((searchParams) => {
+                searchParams.set(name, encodeURIComponent(value));
+                return searchParams;
+            });
+        }
+        toggleFilter(name);
+    }
+
+    function deactivateFilter(name) {
+        setSearchParams((searchParams) => {
+            searchParams.delete(name);
+            return searchParams;
+        });
+        toggleFilter(name);
     }
 
     return (
@@ -102,10 +134,12 @@ export default function ShopFilters({
             </div>
             <div className='filter-content'>
                 {selectedFilter(
-                    activeFilter,
                     filters,
-                    toggleFilter,
-                    categories
+                    categories,
+                    activeFilter,
+                    applyFilter,
+                    activateFilter,
+                    deactivateFilter
                 )}
             </div>
         </div>

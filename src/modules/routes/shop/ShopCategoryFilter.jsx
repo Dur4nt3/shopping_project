@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react';
-import { useSearchParams } from 'react-router';
 import { Select, ConfigProvider } from 'antd';
 import { Theme } from '../../utilities/Theme';
 import { CaretDownFilled } from '@ant-design/icons';
@@ -21,29 +20,17 @@ function createSelectOptions(categories) {
 export default function ShopCategoryFilter({
     currentCategoryFilter,
     applied,
-    toggleFilter,
+    applyFilter,
+    activateFilter,
+    deactivateFilter,
     categories,
 }) {
     const { theme } = useContext(Theme);
     const selectOptions = createSelectOptions(categories);
 
-    // eslint-disable-next-line no-unused-vars
-    const [searchParams, setSearchParams] = useSearchParams();
     const [currentlySelected, setCurrentlySelected] = useState(
         currentCategoryFilter
     );
-
-    function applyFilter() {
-        if (currentlySelected !== null) {
-            setSearchParams((searchParams) => {
-                searchParams.set(
-                    'category',
-                    encodeURIComponent(currentlySelected)
-                );
-                return searchParams;
-            });
-        }
-    }
 
     return (
         <>
@@ -77,6 +64,7 @@ export default function ShopCategoryFilter({
             >
                 {currentlySelected !== null ? (
                     <Select
+                        disabled={!applied}
                         suffixIcon={
                             theme === 'light' ? (
                                 <CaretDownFilled style={{ color: '#C7C8D9' }} />
@@ -92,6 +80,7 @@ export default function ShopCategoryFilter({
                     />
                 ) : (
                     <Select
+                        disabled={!applied}
                         suffixIcon={
                             theme === 'light' ? (
                                 <CaretDownFilled style={{ color: '#C7C8D9' }} />
@@ -107,9 +96,12 @@ export default function ShopCategoryFilter({
                 )}
             </ConfigProvider>
             <FilterManagement
+                filterName='category'
+                filterValue={currentlySelected}
                 applied={applied}
                 applyFilter={applyFilter}
-                toggleFilter={toggleFilter}
+                activateFilter={activateFilter}
+                deactivateFilter={deactivateFilter}
             />
         </>
     );
