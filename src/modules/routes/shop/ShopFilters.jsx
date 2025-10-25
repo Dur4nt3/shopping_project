@@ -8,14 +8,16 @@ import './stylesheets/ShopFilters.css';
 function selectedFilter(
     activeFilter,
     filters,
-    handleFilterAssignment,
+    toggleFilter,
     categories
 ) {
+
     if (activeFilter.name === 'price') {
         return (
             <ShopPriceFilter
                 currentPriceFilter={filters.price.data}
-                handleFilterAssignment={handleFilterAssignment}
+                applied={filters.price.applied}
+                toggleFilter={toggleFilter}
             />
         );
     }
@@ -23,7 +25,8 @@ function selectedFilter(
         return (
             <ShopCategoryFilter
                 currentCategoryFilter={filters.category.data}
-                handleFilterAssignment={handleFilterAssignment}
+                applied={filters.category.applied}
+                toggleFilter={toggleFilter}
                 categories={categories}
             />
         );
@@ -33,7 +36,8 @@ function selectedFilter(
         return (
             <ShopRatingFilter
                 currentRatingFilter={filters.rating.data}
-                handleFilterAssignment={handleFilterAssignment}
+                applied={filters.rating.applied}
+                toggleFilter={toggleFilter}
             />
         );
     }
@@ -41,7 +45,7 @@ function selectedFilter(
 
 export default function ShopFilters({
     filters,
-    handleFilterAssignment,
+    toggleFilter,
     categories,
 }) {
 
@@ -100,7 +104,7 @@ export default function ShopFilters({
                 {selectedFilter(
                     activeFilter,
                     filters,
-                    handleFilterAssignment,
+                    toggleFilter,
                     categories
                 )}
             </div>

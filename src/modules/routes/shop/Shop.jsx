@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLoaderData } from 'react-router';
+import useFetchItems from '../../utilities/useFetchItems';
 
 import ShopHeader from './ShopHeader';
 import ShopMain from './ShopMain';
@@ -7,7 +7,7 @@ import ShopMain from './ShopMain';
 import Filters from '../../utilities/filters';
 
 export default function Shop() {
-    const { items, status } = useLoaderData();
+    const { items, error, loading } = useFetchItems();
 
     const [filters, setFilters] = useState(
         new Filters(
@@ -19,8 +19,7 @@ export default function Shop() {
 
     const currentItems = items;
 
-    function handleFilterAssignment(value, name, toggleActivation) {
-        if (toggleActivation) {
+    function toggleFilter(name) {
             const newFilters = new Filters(
                 { ...filters.price },
                 { ...filters.category },
@@ -30,17 +29,6 @@ export default function Shop() {
 
             setFilters(newFilters);
             return;
-        }
-
-        const newFilters = new Filters(
-            { ...filters.price },
-            { ...filters.category },
-            { ...filters.rating }
-        );
-
-        newFilters[name].data = value;
-
-        setFilters(newFilters);
     }
 
     return (
@@ -48,9 +36,10 @@ export default function Shop() {
             <ShopHeader />
             <ShopMain
                 items={currentItems}
-                status={status}
+                loading={loading}
+                error={error}
                 filters={filters}
-                handleFilterAssignment={handleFilterAssignment}
+                toggleFilter={toggleFilter}
             />
         </>
     );

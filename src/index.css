@@ -57,6 +57,9 @@
 
     --filter-cont-border: #BFC1D3;
     --filter-cont-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+    --cancel-red: #8F0000;
+    --confirm-green: #00C71B;
 }
 
 :root:has(body.dark-mode) {
@@ -89,6 +92,8 @@
 
     --filter-cont-border: #313344;
     --filter-cont-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.95);
+
+    --cancel-red: #780000;
 }
 
 body {
