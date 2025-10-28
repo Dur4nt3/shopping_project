@@ -7,7 +7,7 @@ export default function ItemRating({ theme, rating }) {
                 components: {
                     Rate: {
                         starBg: theme === 'light' ? '#C7C8D9' : '#2A2D3A',
-                        starColor: theme === 'light' ? '#3b3d54' : '#4C506B',
+                        starColor: theme === 'light' ? '#3b3d54' : '#f8fafc',
                     },
                 },
             }}

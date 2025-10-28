@@ -28,11 +28,11 @@
     gap: 0.35rem;
 }
 
-.filter-buttons:has(+ .filter-content > *) {
+/* .filter-buttons:has(+ .filter-content > *) {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--filter-cont-border);
     margin-bottom: 0.5rem;
-}
+} */
 
 .main-filter-buttons > button {
     cursor: pointer;
@@ -108,16 +108,30 @@
 
 .filter-content {
     width: 100%;
-    max-width: 340px;
     align-self: center;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .filter-content:has(*) {
-    min-height: 80px;
+    width: 100vw;
+    border-top: 1px solid var(--filter-button-hover-border);
+    border-bottom: 1px solid var(--filter-button-hover-border);
+    box-shadow: var(--filter-cont-box-shadow);
+    padding: 0.5rem 0.75rem;
+    min-height: calc(80px + 1rem);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--background-color);
+}
+
+.filter-content > * {
+    width: 100%;
+    max-width: 340px;
 }
 
 .filter-content *:disabled {
@@ -217,6 +231,10 @@
 
     .filter-content:has(*) {
         min-height: 0;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        position: static;
     }
 
     .filter-content > *:first-child {
@@ -225,6 +243,7 @@
 
     .filter-management-cont {
         min-width: 200px;
+        max-width: 220px;
         margin-top: 0;
     }
 }
@@ -237,5 +256,6 @@
 
     .filter-management-cont {
         min-width: 250px;
+        max-width: 275px;
     }
 }
