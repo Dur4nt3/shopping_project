@@ -7,7 +7,6 @@ import ThemeProvider from '../../../utilities/Theme';
 
 import HomeHeader from '../HomeHeader';
 import Shop from '../../shop/Shop';
-import Checkout from '../../checkout/Checkout';
 
 import shopLoader from '../../../utilities/loaders/shopLoader';
 import { items } from '../../shop/tests/utilities/mockedItems';
@@ -28,10 +27,6 @@ const routes = [
         element: <Shop />,
         loader: shopLoader,
     },
-    {
-        path: 'checkout',
-        element: <Checkout />,
-    },
 ];
 
 let router;
@@ -50,7 +45,7 @@ describe('Test Suite For The Homepage Header', () => {
         );
     });
 
-    it('Renders the header (snapshot test)', async () => {
+    it('Renders the header (snapshot test)', () => {
         expect(container).toMatchSnapshot();
     });
 

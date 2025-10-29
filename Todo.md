@@ -15,8 +15,9 @@
 
 **MainNav.test.jsx:**
 
-1) Write a test for checking whether or not you can view the cart when clicking the cart icon
-2) Add a full test suite for the cart (add/removing items, etc.)
+1) Add a snapshot test to the navbar
+2) Write a test for checking whether or not you can view the cart when clicking the cart icon
+3) Add a full test suite for the cart (add/removing items, etc.)
 
 ---------
 

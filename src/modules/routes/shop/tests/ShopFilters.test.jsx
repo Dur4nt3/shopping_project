@@ -6,7 +6,6 @@ import { createMemoryRouter, RouterProvider } from 'react-router';
 import ThemeProvider from '../../../utilities/Theme';
 
 import Shop from '../../shop/Shop';
-import Checkout from '../../checkout/Checkout';
 
 import shopLoader from '../../../utilities/loaders/shopLoader';
 
@@ -28,10 +27,6 @@ const routes = [
         path: 'shop',
         element: <Shop />,
         loader: shopLoader,
-    },
-    {
-        path: 'checkout',
-        element: <Checkout />,
     },
 ];
 

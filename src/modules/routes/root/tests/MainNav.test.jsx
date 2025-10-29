@@ -36,17 +36,22 @@ const routes = [
 
 let router;
 let user;
+let container;
 
 describe('Test Suite For The Navbar', () => {
     beforeEach(() => {
         router = createMemoryRouter(routes);
         user = userEvent.setup();
 
-        render(
+        container = render(
             <ThemeProvider>
                 <RouterProvider router={router} />
             </ThemeProvider>
         );
+    });
+
+    it('Renders the navbar (snapshot test)', () => {
+        expect(container).toMatchSnapshot();
     });
 
     it('Is able to change themes', async () => {

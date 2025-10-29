@@ -35,10 +35,6 @@ const routes = [
         element: <Shop />,
         loader: shopLoader,
     },
-    {
-        path: 'checkout',
-        element: <Checkout />,
-    },
 ];
 
 let router;
