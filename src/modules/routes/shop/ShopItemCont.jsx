@@ -20,7 +20,7 @@ export default function ShopItemCont({ itemData }) {
                 <span className='item-rating'>
                     <ItemRating rating={itemData.rating.rate} theme={theme} />
                 </span>
-                <span className='rating-count'>
+                <span className='rating-count' data-testid='rating-count'>
                     ({itemData.rating.count} Reviews)
                 </span>
             </div>

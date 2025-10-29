@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
@@ -9,6 +9,15 @@ import HomeHeader from '../HomeHeader';
 import Shop from '../../shop/Shop';
 import Checkout from '../../checkout/Checkout';
 
+import shopLoader from '../../../utilities/loaders/shopLoader';
+import { items } from '../../shop/tests/utilities/mockedItems';
+
+window.fetch = vi.fn(() =>
+    Promise.resolve({
+        json: () => Promise.resolve(items),
+    })
+);
+
 const routes = [
     {
         path: '/',
@@ -17,6 +26,7 @@ const routes = [
     {
         path: 'shop',
         element: <Shop />,
+        loader: shopLoader,
     },
     {
         path: 'checkout',
@@ -26,8 +36,6 @@ const routes = [
 
 describe('Test Suite For The Navbar', () => {
     it('Is able to change themes', async () => {
-        expect.assertions(4);
-
         const router = createMemoryRouter(routes);
         const user = userEvent.setup();
 
@@ -63,8 +71,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Opens and closes the menu', async () => {
-        expect.assertions(4);
-
         const router = createMemoryRouter(routes);
         const user = userEvent.setup();
 
@@ -100,8 +106,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Can navigate to the shop from the menu', async () => {
-        expect.assertions(3);
-
         const router = createMemoryRouter(routes);
         const user = userEvent.setup();
 
@@ -126,6 +130,9 @@ describe('Test Suite For The Navbar', () => {
 
         expect(router.state.location.pathname).toBe('/shop');
         expect(
+            document.querySelector('.shop-link.currently-visited')
+        ).not.toBeNull();
+        expect(
             screen.getByRole('heading', { name: 'Shop' })
         ).toBeInTheDocument();
         expect(
@@ -134,8 +141,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Can navigate to the checkout from the menu', async () => {
-        expect.assertions(3);
-
         const router = createMemoryRouter(routes);
         const user = userEvent.setup();
 
@@ -152,20 +157,86 @@ describe('Test Suite For The Navbar', () => {
         await user.click(menuButton);
 
         // Same strategy as with the shop test case above
-        const shopLink = screen.getByTestId('menu-checkout-link');
+        const checkoutLink = screen.getByTestId('menu-checkout-link');
 
-        await user.click(shopLink);
+        await user.click(checkoutLink);
 
         expect(router.state.location.pathname).toBe('/checkout');
+        expect(
+            document.querySelector('.checkout-link.currently-visited')
+        ).not.toBeNull();
         expect(
             screen.getByRole('heading', { name: 'Checkout' })
         ).toBeInTheDocument();
         expect(
-            screen.getByRole('heading', { name: 'Almost yours, just one step away.' })
+            screen.getByRole('heading', {
+                name: 'Almost yours, just one step away.',
+            })
         ).toBeInTheDocument();
+    });
+
+    it('Can navigate in between all routes', async () => {
+        const router = createMemoryRouter(routes);
+        const user = userEvent.setup();
+
+        render(
+            <ThemeProvider>
+                <RouterProvider router={router} />
+            </ThemeProvider>
+        );
+
+        // Check navigation from:
+        // home -> shop -> checkout -> shop -> home -> checkout -> home
+        // This covers navigation between all routes
+
+        // DO NOT define any variables as you need to re-fetch the links every time you navigate
+
+        await user.click(
+            screen.getByRole('button', {
+                name: /open navigation menu/i,
+            })
+        );
+
+        await user.click(screen.getByTestId('menu-shop-link'));
+
+        expect(router.state.location.pathname).toBe('/shop');
+
+        await user.click(
+            screen.getByRole('button', {
+                name: /open navigation menu/i,
+            })
+        );
+        await user.click(screen.getByTestId('menu-checkout-link'));
+
+        expect(router.state.location.pathname).toBe('/checkout');
+
+        await user.click(
+            screen.getByRole('button', {
+                name: /open navigation menu/i,
+            })
+        );
+        await user.click(screen.getByTestId('menu-shop-link'));
+
+        expect(router.state.location.pathname).toBe('/shop');
+
+        await user.click(screen.getByRole('link', { name: /pseudo shopper/i }));
+
+        expect(router.state.location.pathname).toBe('/');
+
+        await user.click(
+            screen.getByRole('button', {
+                name: /open navigation menu/i,
+            })
+        );
+        await user.click(screen.getByTestId('menu-checkout-link'));
+
+        expect(router.state.location.pathname).toBe('/checkout');
+
+        await user.click(screen.getByRole('link', { name: /pseudo shopper/i }));
+
+        expect(router.state.location.pathname).toBe('/');
     });
 });
 
 // TODO
 // Write a test for checking whether or not you can view the cart when clicking the cart icon
-// Ensure you can navigate from a non-root location (shop, item, etc.) back to root ('/') by clicking the site name on the navbar

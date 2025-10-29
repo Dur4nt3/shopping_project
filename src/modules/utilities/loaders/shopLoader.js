@@ -17,7 +17,6 @@ function handlePriceFilterData(searchParams) {
 }
 
 export default async function shopLoader({ request }) {
-    console.log('executing shop loader', request);
     const url = new URL(request.url);
     const filterData = {
         price: handlePriceFilterData(url.searchParams),

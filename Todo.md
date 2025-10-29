@@ -15,7 +15,7 @@
 
 **MainNav.test.jsx:**
 
-1) Ensure you can navigate from a non-root location (shop, item, etc.) back to root ('/') by clicking the site name on the navbar
+1) Test using beforeEach for the test setups
 2) Write a test for checking whether or not you can view the cart when clicking the cart icon
 3) Add a full test suite for the cart (add/removing items, etc.)
 
@@ -30,12 +30,12 @@
 *Note: mock the fetch request creating a custom item list*
 *Note 2: it is more than likely that userEvent will work on these types of inputs, therefore, use fireEvent to ensure the correct values are selected.*
 
-**ShopItems.test.jsx:**
+**ShopMain.test.jsx:**
 
-1) Mock the fetch request for the data, ensure mocked items are returned (testing each of the item's sections)
-2) Mock the fetch request again, this time with a larger delay, ensuring that the "loading" state is displayed
-3) Mock the fetch request again, this time returning an error, ensuring that the "error" state is displayed
-4) Test the add to cart functionality:
+*Update the comment about the location of cart related tests once those test are implemented.*
+
+1) Test using beforeEach for the test setups
+2) Test the add to cart functionality:
     - Add 1 item to the cart via pressing the "plus" button and the "Add to Cart" button, ensuring the item is found within the cart
     *Note, after addition to the cart, ensure the animation and text change are shown.*
     - Press the plus and minus button multiple times, end up with the number 2 in the input, and add to cart, ensuring 2 of the item are shown in the cart
@@ -48,7 +48,6 @@
 **ShopHeader.test.jsx:**
 
 1) Add a snapshot test, as the navbar is already tested
-
 
 ---------
 

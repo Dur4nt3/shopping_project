@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
@@ -6,6 +6,15 @@ import userEvent from '@testing-library/user-event';
 import HomeHeader from '../HomeHeader';
 import Shop from '../../shop/Shop';
 import Checkout from '../../checkout/Checkout';
+
+import shopLoader from '../../../utilities/loaders/shopLoader';
+import { items } from '../../shop/tests/utilities/mockedItems';
+
+window.fetch = vi.fn(() =>
+    Promise.resolve({
+        json: () => Promise.resolve(items),
+    })
+);
 
 const routes = [
     {
@@ -15,6 +24,7 @@ const routes = [
     {
         path: 'shop',
         element: <Shop />,
+        loader: shopLoader,
     },
     {
         path: 'checkout',
