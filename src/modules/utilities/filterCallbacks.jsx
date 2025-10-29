@@ -1,5 +1,5 @@
 export function applyFilter(name, value, setSearchParams) {
-    if (value !== null && value !== '') {
+    if (value !== null) {
         if (name === 'price') {
             setSearchParams((searchParams) => {
                 searchParams.set('from', encodeURIComponent(value[0]));
@@ -16,7 +16,7 @@ export function applyFilter(name, value, setSearchParams) {
 }
 
 export function activateFilter(name, value, setSearchParams, toggleFilter) {
-    if (value !== null && value !== '') {
+    if (value !== null) {
         if (name === 'price') {
             setSearchParams((searchParams) => {
                 searchParams.set('from', encodeURIComponent(value[0]));

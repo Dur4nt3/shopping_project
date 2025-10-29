@@ -21,6 +21,11 @@ export default function ShopQueryFilter({
                 className='query-filter-input'
                 placeholder='Search Items'
                 onChange={(event) => setCurrentQuery(event.target.value)}
+                onKeyDown={(event) => {
+                    if (event.key === 'Enter') {
+                        applyFilter('query', currentQuery);
+                    }
+                }}
                 disabled={!applied}
             />
             <FilterManagement

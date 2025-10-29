@@ -51,14 +51,15 @@ export default function PriceFilterInputs({
                             variant='underlined'
                             id='price-from'
                             ref={fromRef}
-                            onChange={(value) =>
+                            onChange={(value) => {
                                 setCurrentPriceRange([
                                     value,
                                     currentPriceRange[1],
-                                ])
-                            }
+                                ]);
+                            }}
                         />
                         <button
+                            aria-label='clear the from price'
                             className='clear-from-price'
                             onClick={() =>
                                 setCurrentPriceRange([
@@ -69,7 +70,7 @@ export default function PriceFilterInputs({
                         >
                             <img
                                 src={theme === 'light' ? clearLight : clearDark}
-                                alt='clear from price'
+                                alt=''
                             />
                         </button>
                     </label>
@@ -92,14 +93,15 @@ export default function PriceFilterInputs({
                             variant='underlined'
                             id='price-to'
                             ref={toRef}
-                            onChange={(value) =>
+                            onChange={(value) => {
                                 setCurrentPriceRange([
                                     currentPriceRange[0],
                                     value,
-                                ])
-                            }
+                                ]);
+                            }}
                         />
                         <button
+                            aria-label='clear the to price'
                             className='clear-to-price'
                             onClick={() =>
                                 setCurrentPriceRange([
@@ -110,7 +112,6 @@ export default function PriceFilterInputs({
                         >
                             <img
                                 src={theme === 'light' ? clearLight : clearDark}
-                                alt='clear to price'
                             />
                         </button>
                     </label>

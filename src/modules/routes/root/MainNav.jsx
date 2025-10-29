@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation } from 'react-router';
 import { Theme } from '../../utilities/Theme';
 
 import NavMenu from './NavMenu';
@@ -15,6 +15,7 @@ import './stylesheets/MainNav.css';
 
 export default function MainNav() {
     const { theme, toggleTheme } = useContext(Theme);
+    const location = useLocation();
     const [menuOpen, setMenuStatus] = useState(false);
 
     const nextThemeName = theme === 'light' ? 'dark mode' : 'light mode';
@@ -33,9 +34,13 @@ export default function MainNav() {
                 </NavLink>
             </h1>
             <div className='nav-secondaries'>
-                <div className='nav-links'>
+                <div className='nav-links' data-testid='nav-links'>
                     <NavLink
-                        to='/shop'
+                        to={
+                            location.pathname === '/shop'
+                                ? `/shop${location.search}`
+                                : '/shop'
+                        }
                         className={({ isActive }) =>
                             isActive
                                 ? 'shop-link currently-visited'

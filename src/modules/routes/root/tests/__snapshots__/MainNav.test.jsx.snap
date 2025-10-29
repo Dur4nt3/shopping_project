@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Test Suite For The Homepage Header > Renders the header (snapshot test) 1`] = `
+exports[`Test Suite For The Navbar > Renders the navbar (snapshot test) 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

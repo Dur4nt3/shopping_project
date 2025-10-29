@@ -206,7 +206,7 @@
     .shop-filters-cont {
         justify-content: start;
         flex-direction: row;
-        gap: 4rem;
+        gap: 3rem;
         height: 50px;
     }
 
@@ -221,12 +221,12 @@
     }
 
     .filter-content {
-        max-width: 500px;
+        max-width: 525px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-direction: row;
-        gap: 0.5rem;
+        gap: 2rem;
     }
 
     .filter-content:has(*) {
@@ -250,8 +250,7 @@
 
 @media (min-width: 80rem) {
     .filter-content {
-        max-width: 600px;
-        gap: 1rem;
+        max-width: 650px;
     }
 
     .filter-management-cont {

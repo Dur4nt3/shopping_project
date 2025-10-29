@@ -95,6 +95,7 @@ export default function ShopFilters({
                         onClick={(event) =>
                             handleFilterActivation(event.currentTarget, 'query')
                         }
+                        aria-label='search items by name'
                     >
                         <img
                             src={
@@ -103,12 +104,11 @@ export default function ShopFilters({
                                     ? searchLight
                                     : searchDark
                             }
-                            alt='search items by name'
                         />
                     </button>
                 </div>
             </div>
-            <div className='filter-content'>
+            <div className='filter-content' data-testid='filter-content'>
                 {selectedFilter(
                     new FilterHandler(
                         filters,

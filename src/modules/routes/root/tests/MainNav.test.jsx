@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen, within } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
 
@@ -34,17 +34,27 @@ const routes = [
     },
 ];
 
-describe('Test Suite For The Navbar', () => {
-    it('Is able to change themes', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
+let router;
+let user;
+let container;
 
-        render(
+describe('Test Suite For The Navbar', () => {
+    beforeEach(() => {
+        router = createMemoryRouter(routes);
+        user = userEvent.setup();
+
+        container = render(
             <ThemeProvider>
                 <RouterProvider router={router} />
             </ThemeProvider>
         );
+    });
 
+    it('Renders the navbar (snapshot test)', () => {
+        expect(container).toMatchSnapshot();
+    });
+
+    it('Is able to change themes', async () => {
         const darkModeButton = screen.getByRole('button', {
             name: /change to dark mode/i,
         });
@@ -71,15 +81,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Opens and closes the menu', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         const menuButton = screen.getByRole('button', {
             name: /open navigation menu/i,
         });
@@ -106,15 +107,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Can navigate to the shop from the menu', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         const menuButton = screen.getByRole('button', {
             name: /open navigation menu/i,
         });
@@ -140,16 +132,29 @@ describe('Test Suite For The Navbar', () => {
         ).toBeInTheDocument();
     });
 
-    it('Can navigate to the checkout from the menu', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+    it('Can navigate to the shop from navbar', async () => {
+        const shopLink = within(screen.getByTestId('nav-links')).getByRole(
+            'link',
+            { name: /shop/i }
         );
 
+        await user.click(shopLink);
+
+        expect(router.state.location.pathname).toBe('/shop');
+        expect(
+            within(screen.getByTestId('nav-links')).getByRole('link', {
+                name: /shop/i,
+            })
+        ).toHaveClass('currently-visited');
+        expect(
+            screen.getByRole('heading', { name: 'Shop' })
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole('heading', { name: 'Fresh finds, just for you.' })
+        ).toBeInTheDocument();
+    });
+
+    it('Can navigate to the checkout from the menu', async () => {
         const menuButton = screen.getByRole('button', {
             name: /open navigation menu/i,
         });
@@ -175,20 +180,29 @@ describe('Test Suite For The Navbar', () => {
         ).toBeInTheDocument();
     });
 
-    it('Can navigate in between all routes', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+    it('Can navigate to the checkout from navbar', async () => {
+        const shopLink = within(screen.getByTestId('nav-links')).getByRole(
+            'link',
+            { name: /checkout/i }
         );
 
-        // Check navigation from:
-        // home -> shop -> checkout -> shop -> home -> checkout -> home
-        // This covers navigation between all routes
+        await user.click(shopLink);
 
+        expect(router.state.location.pathname).toBe('/checkout');
+        expect(
+            within(screen.getByTestId('nav-links')).getByRole('link', {
+                name: /checkout/i,
+            })
+        ).toHaveClass('currently-visited');
+        expect(
+            screen.getByRole('heading', { name: 'Checkout' })
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole('heading', { name: 'Almost yours, just one step away.' })
+        ).toBeInTheDocument();
+    });
+
+    it('Can navigate in between all routes', async () => {
         // DO NOT define any variables as you need to re-fetch the links every time you navigate
 
         await user.click(

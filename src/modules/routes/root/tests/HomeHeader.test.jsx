@@ -1,11 +1,12 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen, waitFor } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
 
+import ThemeProvider from '../../../utilities/Theme';
+
 import HomeHeader from '../HomeHeader';
 import Shop from '../../shop/Shop';
-import Checkout from '../../checkout/Checkout';
 
 import shopLoader from '../../../utilities/loaders/shopLoader';
 import { items } from '../../shop/tests/utilities/mockedItems';
@@ -26,36 +27,38 @@ const routes = [
         element: <Shop />,
         loader: shopLoader,
     },
-    {
-        path: 'checkout',
-        element: <Checkout />,
-    },
 ];
 
+let router;
+let user;
+let container;
+
 describe('Test Suite For The Homepage Header', () => {
-    it('Renders the header (snapshot test)', async () => {
-        const router = createMemoryRouter(routes);
+    beforeEach(() => {
+        router = createMemoryRouter(routes);
+        user = userEvent.setup();
 
-        const container = render(<RouterProvider router={router} />);
+        container = render(
+            <ThemeProvider>
+                <RouterProvider router={router} />
+            </ThemeProvider>
+        );
+    });
 
+    it('Renders the header (snapshot test)', () => {
         expect(container).toMatchSnapshot();
     });
 
     it('Navigates to the shop using the header button', async () => {
-        expect.assertions(3);
-
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(<RouterProvider router={router} />);
-
         const shopLink = screen.getByRole('link', {
             name: /shop now/i,
         });
 
         await user.click(shopLink);
 
-        expect(router.state.location.pathname).toBe('/shop');
+        await waitFor(() => {
+            expect(router.state.location.pathname).toBe('/shop');
+        });
         expect(
             screen.getByRole('heading', { name: 'Shop' })
         ).toBeInTheDocument();
