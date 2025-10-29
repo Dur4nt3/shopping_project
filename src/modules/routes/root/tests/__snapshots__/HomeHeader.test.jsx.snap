@@ -53,12 +53,12 @@ exports[`Test Suite For The Homepage Header > Renders the header (snapshot test)
                 />
               </button>
               <button
-                aria-label="change to light mode"
+                aria-label="change to dark mode"
                 class="icon-button"
               >
                 <img
-                  alt="change to light mode"
-                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-moon-icon%20lucide-moon'%3e%3cpath%20d='M20.985%2012.486a9%209%200%201%201-9.473-9.472c.405-.022.617.46.402.803a6%206%200%200%200%208.268%208.268c.344-.215.825-.004.803.401'/%3e%3c/svg%3e"
+                  alt="change to dark mode"
+                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-sun-icon%20lucide-sun'%3e%3ccircle%20cx='12'%20cy='12'%20r='4'/%3e%3cpath%20d='M12%202v2'/%3e%3cpath%20d='M12%2020v2'/%3e%3cpath%20d='m4.93%204.93%201.41%201.41'/%3e%3cpath%20d='m17.66%2017.66%201.41%201.41'/%3e%3cpath%20d='M2%2012h2'/%3e%3cpath%20d='M20%2012h2'/%3e%3cpath%20d='m6.34%2017.66-1.41%201.41'/%3e%3cpath%20d='m19.07%204.93-1.41%201.41'/%3e%3c/svg%3e"
                 />
               </button>
               <button
@@ -237,12 +237,12 @@ exports[`Test Suite For The Homepage Header > Renders the header (snapshot test)
               />
             </button>
             <button
-              aria-label="change to light mode"
+              aria-label="change to dark mode"
               class="icon-button"
             >
               <img
-                alt="change to light mode"
-                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-moon-icon%20lucide-moon'%3e%3cpath%20d='M20.985%2012.486a9%209%200%201%201-9.473-9.472c.405-.022.617.46.402.803a6%206%200%200%200%208.268%208.268c.344-.215.825-.004.803.401'/%3e%3c/svg%3e"
+                alt="change to dark mode"
+                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-sun-icon%20lucide-sun'%3e%3ccircle%20cx='12'%20cy='12'%20r='4'/%3e%3cpath%20d='M12%202v2'/%3e%3cpath%20d='M12%2020v2'/%3e%3cpath%20d='m4.93%204.93%201.41%201.41'/%3e%3cpath%20d='m17.66%2017.66%201.41%201.41'/%3e%3cpath%20d='M2%2012h2'/%3e%3cpath%20d='M20%2012h2'/%3e%3cpath%20d='m6.34%2017.66-1.41%201.41'/%3e%3cpath%20d='m19.07%204.93-1.41%201.41'/%3e%3c/svg%3e"
               />
             </button>
             <button

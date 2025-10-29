@@ -1,7 +1,9 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
+
+import ThemeProvider from '../../../utilities/Theme';
 
 import HomeHeader from '../HomeHeader';
 import Shop from '../../shop/Shop';
@@ -32,23 +34,27 @@ const routes = [
     },
 ];
 
+let router;
+let user;
+let container;
+
 describe('Test Suite For The Homepage Header', () => {
+    beforeEach(() => {
+        router = createMemoryRouter(routes);
+        user = userEvent.setup();
+
+        container = render(
+            <ThemeProvider>
+                <RouterProvider router={router} />
+            </ThemeProvider>
+        );
+    });
+
     it('Renders the header (snapshot test)', async () => {
-        const router = createMemoryRouter(routes);
-
-        const container = render(<RouterProvider router={router} />);
-
         expect(container).toMatchSnapshot();
     });
 
     it('Navigates to the shop using the header button', async () => {
-        expect.assertions(3);
-
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(<RouterProvider router={router} />);
-
         const shopLink = screen.getByRole('link', {
             name: /shop now/i,
         });

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
@@ -34,17 +34,22 @@ const routes = [
     },
 ];
 
+let router;
+let user;
+
 describe('Test Suite For The Navbar', () => {
-    it('Is able to change themes', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
+    beforeEach(() => {
+        router = createMemoryRouter(routes);
+        user = userEvent.setup();
 
         render(
             <ThemeProvider>
                 <RouterProvider router={router} />
             </ThemeProvider>
         );
+    });
 
+    it('Is able to change themes', async () => {
         const darkModeButton = screen.getByRole('button', {
             name: /change to dark mode/i,
         });
@@ -71,15 +76,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Opens and closes the menu', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         const menuButton = screen.getByRole('button', {
             name: /open navigation menu/i,
         });
@@ -106,15 +102,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Can navigate to the shop from the menu', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         const menuButton = screen.getByRole('button', {
             name: /open navigation menu/i,
         });
@@ -141,15 +128,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Can navigate to the checkout from the menu', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         const menuButton = screen.getByRole('button', {
             name: /open navigation menu/i,
         });
@@ -176,15 +154,6 @@ describe('Test Suite For The Navbar', () => {
     });
 
     it('Can navigate in between all routes', async () => {
-        const router = createMemoryRouter(routes);
-        const user = userEvent.setup();
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         // Check navigation from:
         // home -> shop -> checkout -> shop -> home -> checkout -> home
         // This covers navigation between all routes

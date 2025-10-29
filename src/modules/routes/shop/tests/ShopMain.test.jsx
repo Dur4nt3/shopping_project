@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 
@@ -41,9 +41,11 @@ const routes = [
     },
 ];
 
-describe('Test for item fetching and displaying', () => {
-    it('Displays an error when a request fails', async () => {
-        const router = createMemoryRouter(routes, {
+let router;
+
+describe('Test Suite for item fetching and displaying', () => {
+    beforeEach(() => {
+        router = createMemoryRouter(routes, {
             initialEntries: ['/shop'],
             initialIndex: 0,
         });
@@ -53,7 +55,9 @@ describe('Test for item fetching and displaying', () => {
                 <RouterProvider router={router} />
             </ThemeProvider>
         );
+    });
 
+    it('Displays an error when a request fails', async () => {
         await waitFor(() => {
             expect(screen.getByText('An Error Occurred!')).toBeInTheDocument();
         });
@@ -64,17 +68,6 @@ describe('Test for item fetching and displaying', () => {
     });
 
     it('Displays a loader before items are loaded', async () => {
-        const router = createMemoryRouter(routes, {
-            initialEntries: ['/shop'],
-            initialIndex: 0,
-        });
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         // The loader is displayed and there are no items
         await waitFor(() => {
             expect(screen.getByText('Loading Items...')).toBeInTheDocument();
@@ -94,17 +87,6 @@ describe('Test for item fetching and displaying', () => {
     });
 
     it('Displays each of the returned items', async () => {
-        const router = createMemoryRouter(routes, {
-            initialEntries: ['/shop'],
-            initialIndex: 0,
-        });
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         // All 10 items are loaded
         await waitFor(() => {
             expect(
@@ -136,17 +118,6 @@ describe('Test for item fetching and displaying', () => {
     });
 
     it('Properly displays the returned items', async () => {
-        const router = createMemoryRouter(routes, {
-            initialEntries: ['/shop'],
-            initialIndex: 0,
-        });
-
-        render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
-        );
-
         // All items are loaded
         await waitFor(() => {
             expect(
