@@ -15,9 +15,8 @@
 
 **MainNav.test.jsx:**
 
-1) Test using beforeEach for the test setups
-2) Write a test for checking whether or not you can view the cart when clicking the cart icon
-3) Add a full test suite for the cart (add/removing items, etc.)
+1) Write a test for checking whether or not you can view the cart when clicking the cart icon
+2) Add a full test suite for the cart (add/removing items, etc.)
 
 ---------
 
@@ -25,8 +24,9 @@
 
 **ShopFilters.test.jsx:**
 
-1) Test applying each filter individually - ensure data is filtered properly
-2) Test applying multiple filters together - same as above, ensuring data is filtered properly
+1) Test activating and deactivate filter, ensuring styles are applied (check className) and content is displayed
+2) Test applying each filter individually - ensure data is filtered properly
+3) Test applying multiple filters together - same as above, ensuring data is filtered properly
 *Note: mock the fetch request creating a custom item list*
 *Note 2: it is more than likely that userEvent will work on these types of inputs, therefore, use fireEvent to ensure the correct values are selected.*
 

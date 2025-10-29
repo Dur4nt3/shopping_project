@@ -1,0 +1,226 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test Suite For The Shop Header > Renders the header (snapshot test) 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header>
+        <nav>
+          <h1
+            class="site-name"
+          >
+            <a
+              aria-current="page"
+              class="currently-visited"
+              data-discover="true"
+              href="/"
+            >
+              Pseudo Shopper
+            </a>
+          </h1>
+          <div
+            class="nav-secondaries"
+          >
+            <div
+              class="nav-links"
+            >
+              <a
+                class="shop-link"
+                data-discover="true"
+                href="/shop"
+              >
+                Shop
+              </a>
+              <a
+                class="checkout-link"
+                data-discover="true"
+                href="/checkout"
+              >
+                Checkout
+              </a>
+            </div>
+            <div
+              class="nav-icons"
+            >
+              <button
+                aria-label="view cart"
+                class="icon-button nav-cart"
+              >
+                <img
+                  alt="view cart"
+                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+                />
+              </button>
+              <button
+                aria-label="change to dark mode"
+                class="icon-button"
+              >
+                <img
+                  alt="change to dark mode"
+                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-sun-icon%20lucide-sun'%3e%3ccircle%20cx='12'%20cy='12'%20r='4'/%3e%3cpath%20d='M12%202v2'/%3e%3cpath%20d='M12%2020v2'/%3e%3cpath%20d='m4.93%204.93%201.41%201.41'/%3e%3cpath%20d='m17.66%2017.66%201.41%201.41'/%3e%3cpath%20d='M2%2012h2'/%3e%3cpath%20d='M20%2012h2'/%3e%3cpath%20d='m6.34%2017.66-1.41%201.41'/%3e%3cpath%20d='m19.07%204.93-1.41%201.41'/%3e%3c/svg%3e"
+                />
+              </button>
+              <button
+                aria-label="open navigation menu"
+                class="icon-button nav-menu-button"
+              >
+                <img
+                  alt="view cart"
+                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-menu-icon%20lucide-menu'%3e%3cpath%20d='M4%205h16'/%3e%3cpath%20d='M4%2012h16'/%3e%3cpath%20d='M4%2019h16'/%3e%3c/svg%3e"
+                />
+              </button>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="header-main"
+        >
+          <h1
+            class="header-text1"
+          >
+            Shop
+          </h1>
+          <h3>
+            Fresh finds, just for you.
+          </h3>
+        </div>
+      </header>
+    </div>
+  </body>,
+  "container": <div>
+    <header>
+      <nav>
+        <h1
+          class="site-name"
+        >
+          <a
+            aria-current="page"
+            class="currently-visited"
+            data-discover="true"
+            href="/"
+          >
+            Pseudo Shopper
+          </a>
+        </h1>
+        <div
+          class="nav-secondaries"
+        >
+          <div
+            class="nav-links"
+          >
+            <a
+              class="shop-link"
+              data-discover="true"
+              href="/shop"
+            >
+              Shop
+            </a>
+            <a
+              class="checkout-link"
+              data-discover="true"
+              href="/checkout"
+            >
+              Checkout
+            </a>
+          </div>
+          <div
+            class="nav-icons"
+          >
+            <button
+              aria-label="view cart"
+              class="icon-button nav-cart"
+            >
+              <img
+                alt="view cart"
+                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-shopping-cart-icon%20lucide-shopping-cart'%3e%3ccircle%20cx='8'%20cy='21'%20r='1'/%3e%3ccircle%20cx='19'%20cy='21'%20r='1'/%3e%3cpath%20d='M2.05%202.05h2l2.66%2012.42a2%202%200%200%200%202%201.58h9.78a2%202%200%200%200%201.95-1.57l1.65-7.43H5.12'/%3e%3c/svg%3e"
+              />
+            </button>
+            <button
+              aria-label="change to dark mode"
+              class="icon-button"
+            >
+              <img
+                alt="change to dark mode"
+                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-sun-icon%20lucide-sun'%3e%3ccircle%20cx='12'%20cy='12'%20r='4'/%3e%3cpath%20d='M12%202v2'/%3e%3cpath%20d='M12%2020v2'/%3e%3cpath%20d='m4.93%204.93%201.41%201.41'/%3e%3cpath%20d='m17.66%2017.66%201.41%201.41'/%3e%3cpath%20d='M2%2012h2'/%3e%3cpath%20d='M20%2012h2'/%3e%3cpath%20d='m6.34%2017.66-1.41%201.41'/%3e%3cpath%20d='m19.07%204.93-1.41%201.41'/%3e%3c/svg%3e"
+              />
+            </button>
+            <button
+              aria-label="open navigation menu"
+              class="icon-button nav-menu-button"
+            >
+              <img
+                alt="view cart"
+                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-menu-icon%20lucide-menu'%3e%3cpath%20d='M4%205h16'/%3e%3cpath%20d='M4%2012h16'/%3e%3cpath%20d='M4%2019h16'/%3e%3c/svg%3e"
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="header-main"
+      >
+        <h1
+          class="header-text1"
+        >
+          Shop
+        </h1>
+        <h3>
+          Fresh finds, just for you.
+        </h3>
+      </div>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
