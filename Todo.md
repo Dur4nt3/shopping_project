@@ -75,13 +75,17 @@
 
 1) Implement the cart button functionality (i.e., opening a cart modal when clicking the cart icon)
 
+**NavMenu.css:**
+
+1) Decrease the blur on the menu background (until the header text is rather easily readable)
+
 ---------
 
 ### Shop
 
 **ShopFilters.jsx:**
 
-1) Adjust styling on smaller layouts so that when you open the filters there is no shift in the layout
+1) Price inputs: when the user deletes the input value (i.e., leaves a blank value, auto-adjust the value back to the min/max)
 
 **ShopItem.jsx:**
 
