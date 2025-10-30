@@ -11,10 +11,18 @@ import shopLoader from '../../../utilities/loaders/shopLoader';
 
 import { items } from './utilities/mockedItems';
 
-// NOTE: More consistency was found when using "waitFor" as opposed to using "find"
-// Therefore, although "find" may seem more suitable, I chose to go with "waitFor"
+// This file only includes tests for interacting with the filter inputs
+// The main goal of this test suite (as opposed to "ShopFiltersData.test.jsx")
+// is to ensure local filter state is updating as the user interacts with the filters
+// This serves as a basis for "ShopFiltersData.test.jsx"
+// ensuring the user can alter the filter inputs
 
-// NOTE 2: Cart related tests are found in: [placeholder for future location]
+// Note this is mainly done for price (ensuring minimum and maximums are held)
+// and rating (ensuring that filled stars correlate to the queried rating)
+// but I've decided to include category and query for the sake of including all filters
+
+// "ShopFiltersData.test.jsx" is the file which includes testing filtered data
+// "ShopFiltersToggle.test.jsx" is the file which includes testing toggling the filters
 
 window.fetch = vi.fn().mockImplementation(() =>
     Promise.resolve({
@@ -33,7 +41,7 @@ const routes = [
 let router;
 let user;
 
-describe('Test Suite for item fetching and displaying', () => {
+describe('Test Suite for interacting with filters', () => {
     beforeEach(() => {
         router = createMemoryRouter(routes, {
             initialEntries: ['/shop'],
@@ -47,6 +55,4 @@ describe('Test Suite for item fetching and displaying', () => {
             </ThemeProvider>
         );
     });
-
-    it('Activate and deactivate filters when clicked', async () => {});
 });

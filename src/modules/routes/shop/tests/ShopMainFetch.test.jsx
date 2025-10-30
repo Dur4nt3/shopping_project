@@ -14,7 +14,7 @@ import { items } from './utilities/mockedItems';
 // NOTE: More consistency was found when using "waitFor" as opposed to using "find"
 // Therefore, although "find" may seem more suitable, I chose to go with "waitFor"
 
-// NOTE 2: Cart related tests are found in: [placeholder for future location]
+// NOTE 2: Cart related tests are found in: ShopMainCart.test.jsx
 
 window.fetch = vi
     .fn()

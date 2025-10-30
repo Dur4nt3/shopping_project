@@ -15,9 +15,8 @@
 
 **MainNav.test.jsx:**
 
-1) Add a snapshot test to the navbar
-2) Write a test for checking whether or not you can view the cart when clicking the cart icon
-3) Add a full test suite for the cart (add/removing items, etc.)
+1) Write a test for checking whether or not you can view the cart when clicking the cart icon
+2) Add a full test suite for the cart (add/removing items, etc.)
 
 ---------
 
@@ -25,7 +24,8 @@
 
 **ShopFilters.test.jsx:**
 
-1) Test activating and deactivate filter, ensuring styles are applied (check className) and content is displayed
+1) Test interacting with the filters, ensuring price min and max are held up, and selected ratings are applied correctly
+*Note: include category and query in the tests, ensuring the selected category is applied when click, and that the query updated correctly when typing.*
 2) Test applying each filter individually - ensure data is filtered properly
 3) Test applying multiple filters together - same as above, ensuring data is filtered properly
 *Note: mock the fetch request creating a custom item list*
@@ -45,10 +45,6 @@
     - Press enter on the input after typing an order count, ensure the item is properly added to the cart
     - Invoke an error, ensure the error animation and text change are shown
     - Add different items to the cart, ensure each individual item is shown in the cart
-
-**ShopHeader.test.jsx:**
-
-1) Add a snapshot test, as the navbar is already tested
 
 ---------
 
