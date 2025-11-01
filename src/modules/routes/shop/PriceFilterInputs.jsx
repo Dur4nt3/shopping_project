@@ -51,12 +51,22 @@ export default function PriceFilterInputs({
                             variant='underlined'
                             id='price-from'
                             ref={fromRef}
-                            onChange={(value) =>
+                            onChange={(value) => {
+                                console.log(value);
+                                if (value === null) {
+                                    setCurrentPriceRange([
+                                        priceRange[0],
+                                        currentPriceRange[1],
+                                    ]);
+
+                                    return;
+                                }
+
                                 setCurrentPriceRange([
                                     value,
                                     currentPriceRange[1],
-                                ])
-                            }
+                                ]);
+                            }}
                         />
                         <button
                             className='clear-from-price'
@@ -92,12 +102,21 @@ export default function PriceFilterInputs({
                             variant='underlined'
                             id='price-to'
                             ref={toRef}
-                            onChange={(value) =>
+                            onChange={(value) => {
+                                if (value === null) {
+                                    setCurrentPriceRange([
+                                        currentPriceRange[0],
+                                        priceRange[1],
+                                    ]);
+
+                                    return;
+                                }
+
                                 setCurrentPriceRange([
                                     currentPriceRange[0],
                                     value,
-                                ])
-                            }
+                                ]);
+                            }}
                         />
                         <button
                             className='clear-to-price'
