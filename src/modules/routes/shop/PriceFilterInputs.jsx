@@ -52,16 +52,6 @@ export default function PriceFilterInputs({
                             id='price-from'
                             ref={fromRef}
                             onChange={(value) => {
-                                console.log(value);
-                                if (value === null) {
-                                    setCurrentPriceRange([
-                                        priceRange[0],
-                                        currentPriceRange[1],
-                                    ]);
-
-                                    return;
-                                }
-
                                 setCurrentPriceRange([
                                     value,
                                     currentPriceRange[1],
@@ -69,6 +59,7 @@ export default function PriceFilterInputs({
                             }}
                         />
                         <button
+                            aria-label='clear the from price'
                             className='clear-from-price'
                             onClick={() =>
                                 setCurrentPriceRange([
@@ -79,7 +70,7 @@ export default function PriceFilterInputs({
                         >
                             <img
                                 src={theme === 'light' ? clearLight : clearDark}
-                                alt='clear from price'
+                                alt=''
                             />
                         </button>
                     </label>
@@ -103,15 +94,6 @@ export default function PriceFilterInputs({
                             id='price-to'
                             ref={toRef}
                             onChange={(value) => {
-                                if (value === null) {
-                                    setCurrentPriceRange([
-                                        currentPriceRange[0],
-                                        priceRange[1],
-                                    ]);
-
-                                    return;
-                                }
-
                                 setCurrentPriceRange([
                                     currentPriceRange[0],
                                     value,
@@ -119,6 +101,7 @@ export default function PriceFilterInputs({
                             }}
                         />
                         <button
+                            aria-label='clear the to price'
                             className='clear-to-price'
                             onClick={() =>
                                 setCurrentPriceRange([
@@ -129,7 +112,6 @@ export default function PriceFilterInputs({
                         >
                             <img
                                 src={theme === 'light' ? clearLight : clearDark}
-                                alt='clear to price'
                             />
                         </button>
                     </label>

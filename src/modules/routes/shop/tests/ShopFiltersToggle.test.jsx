@@ -64,13 +64,17 @@ describe('Test Suite for toggling the filters on and off', () => {
 
         expect(fromInput).toBeInTheDocument;
         expect(fromInput).toHaveValue('10.00');
-        expect(screen.getByAltText(/clear from price/i)).toBeInTheDocument();
+        expect(
+            screen.getByRole('button', { name: /clear the from price/i })
+        ).toBeInTheDocument();
 
         const toInput = screen.getByLabelText('To');
 
         expect(toInput).toBeInTheDocument;
         expect(toInput).toHaveValue('100.00');
-        expect(screen.getByAltText(/clear to price/i)).toBeInTheDocument();
+        expect(
+            screen.getByRole('button', { name: /clear the to price/i })
+        ).toBeInTheDocument();
 
         expect(
             screen.getByRole('button', { name: 'Apply' })
@@ -107,6 +111,8 @@ describe('Test Suite for toggling the filters on and off', () => {
         // Although there isn't another select input on the page, this is for safety
         const filterContent = screen.getByTestId('filter-content');
 
+        // This is just a wrapper Ant Design uses over the actual select element
+        // It is used to get access to the actual select element (by clicking on it)
         const selectInput = within(filterContent).getByRole('combobox');
 
         expect(selectInput).toBeInTheDocument();
@@ -114,14 +120,9 @@ describe('Test Suite for toggling the filters on and off', () => {
             within(filterContent).getByText(/filter by category/i)
         ).toBeInTheDocument();
 
-        // Work around for Ant Design's select component
-        // Due to how Ant Design structures their components, there may be more than 1 of the same option in the DOM
-        // Although Ant Design removes the visibility of the duplicates, they are still caught by the "AllByText" query
-        // Therefore, directly query the all options by their class, and check each of them
         await user.click(selectInput);
-        const selectOptions = [
-            ...document.querySelectorAll('.ant-select-item-option-content'),
-        ];
+        // The actual listbox (select) only appear after clicking the input
+        const selectOptions = [...screen.getByRole('listbox').children];
         expect(selectOptions).toHaveLength(4);
         expect(selectOptions[0]).toHaveTextContent(/category 1/i);
         expect(selectOptions[1]).toHaveTextContent(/category 2/i);
@@ -184,7 +185,9 @@ describe('Test Suite for toggling the filters on and off', () => {
             ).toBeInTheDocument();
         });
 
-        const queryFilter = screen.getByRole('button', { name: /search items by name/i });
+        const queryFilter = screen.getByRole('button', {
+            name: /search items by name/i,
+        });
 
         await user.click(queryFilter);
 

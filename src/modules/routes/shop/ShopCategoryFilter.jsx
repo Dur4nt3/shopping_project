@@ -64,6 +64,7 @@ export default function ShopCategoryFilter({
             >
                 {currentlySelected !== null ? (
                     <Select
+                        virtual={false}
                         disabled={!applied}
                         suffixIcon={
                             theme === 'light' ? (
@@ -80,6 +81,7 @@ export default function ShopCategoryFilter({
                     />
                 ) : (
                     <Select
+                        virtual={false}
                         disabled={!applied}
                         suffixIcon={
                             theme === 'light' ? (

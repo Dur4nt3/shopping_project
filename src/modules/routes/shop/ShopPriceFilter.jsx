@@ -21,6 +21,35 @@ export default function ShopPriceFilter({
         currentPriceFilter === null ? priceRange : currentPriceFilter
     );
 
+    function adjustPrices() {
+        const newPriceRange = [...currentPriceRange];
+
+        if (currentPriceRange[0] === null) {
+            // eslint-disable-next-line prefer-destructuring
+            newPriceRange[0] = priceRange[0];
+        }
+        if (currentPriceRange[1] === null) {
+            // eslint-disable-next-line prefer-destructuring
+            newPriceRange[1] = priceRange[1];
+        }
+
+        setCurrentPriceRange(newPriceRange);
+
+        return newPriceRange;
+    }
+
+    function applyFilterWrapper(filterName) {
+        const newPriceRange = adjustPrices();
+
+        applyFilter(filterName, newPriceRange);
+    }
+
+    function activateFilterWrapper(filterName) {
+        const newPriceRange = adjustPrices();
+
+        activateFilter(filterName, newPriceRange);
+    }
+
     return (
         <>
             <PriceFilterInputs
@@ -35,8 +64,8 @@ export default function ShopPriceFilter({
                 filterName='price'
                 filterValue={currentPriceRange}
                 applied={applied}
-                applyFilter={applyFilter}
-                activateFilter={activateFilter}
+                applyFilter={applyFilterWrapper}
+                activateFilter={activateFilterWrapper}
                 deactivateFilter={deactivateFilter}
             />
         </>

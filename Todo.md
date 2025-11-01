@@ -85,8 +85,6 @@
 
 **ShopFilters.jsx:**
 
-1) Price inputs: when the user deletes the input value (i.e., leaves a blank value, auto-adjust the value back to the min/max)
-
 **ShopItem.jsx:**
 
 1) Create an add to cart function, this function gets an item's id and order count and updates the Cart context
