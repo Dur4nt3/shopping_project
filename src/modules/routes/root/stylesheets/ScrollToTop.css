@@ -1,0 +1,15 @@
+.scroll-to-top-cont {
+    position: fixed;
+    z-index: 3;
+
+    bottom: 1.25%;
+    right: 1.25%;
+    background-color: var(--header-background-transparent);
+    border-radius: 50% 50%;
+}
+
+.scroll-to-top {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+}

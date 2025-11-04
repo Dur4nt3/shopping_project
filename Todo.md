@@ -91,6 +91,12 @@
 
 ### Root
 
+**ScrollToTop.jsx:**
+
+1) Test within the shop ensure it scrolls to top
+2) Test to see if it disappear after applying a filter
+*Expected bug: will not disappear after applying the first filter.*
+
 **MainNav.jsx:**
 
 1) Implement the cart button functionality (i.e., opening a cart modal when clicking the cart icon)
@@ -105,6 +111,14 @@ Visual depending on screen width:
 - Large layout modal - slide in/out from side, adjust width according to screen size (not full width), fully opaque background
 
 **NavMenu.css:**
+
+**CartModal.jsx:**
+
+1) Potentially add a tooltip to the item name when hovered/focused on
+*This is done to remediate the issue where item names are truncated due to being too long*
+2) Save cart items to the localStorage, load cart items from the localStorage
+*if using localStorage, it will be to be mocked in tests.*
+*For the checkout, load from the cart by default, but if the cart is empty, check the localStorage.*
 
 ---------
 

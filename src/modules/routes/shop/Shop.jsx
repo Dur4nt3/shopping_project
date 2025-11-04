@@ -10,6 +10,7 @@ import createFilteredItems from '../../utilities/createFilteredItems';
 
 import ShopHeader from './ShopHeader';
 import ShopMain from './ShopMain';
+import ScrollToTop from '../root/ScrollToTop';
 
 import Filters from '../../utilities/filters';
 
@@ -58,6 +59,7 @@ export default function Shop() {
                 categories={categories}
                 priceRange={priceRange}
             />
+            <ScrollToTop />
         </>
     );
 }

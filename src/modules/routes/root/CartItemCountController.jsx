@@ -1,19 +1,20 @@
 import { InputNumber, ConfigProvider } from 'antd';
 
-export default function ItemCountController({
+// Although sharing similarities, this component isn't the same as "ItemCountController.jsx"
+// There are nuances to this component which make it better for usage within the "CartItem" component
+export default function CartItemCountController({
     theme,
-    orderCount,
+    quantity,
     setOrderCount,
-    handleCartAddition,
 }) {
     return (
         <div className='item-count-cont'>
             <button
-                disabled={orderCount <= 0}
+                disabled={quantity <= 1}
                 className='decrement-order-count'
                 onClick={() => {
-                    if (orderCount > 0) {
-                        setOrderCount(orderCount - 1);
+                    if (quantity > 1) {
+                        setOrderCount(quantity - 1);
                     }
                 }}
             >
@@ -41,8 +42,8 @@ export default function ItemCountController({
                 }}
             >
                 <InputNumber
-                    value={orderCount}
-                    min={0}
+                    value={quantity}
+                    min={1}
                     max={10}
                     controls={false}
                     step={1}
@@ -51,15 +52,14 @@ export default function ItemCountController({
                     onChange={(value) => {
                         setOrderCount(value);
                     }}
-                    onPressEnter={() => handleCartAddition()}
                 />
             </ConfigProvider>
             <button
-                disabled={orderCount >= 10}
+                disabled={quantity >= 10}
                 className='increment-order-count'
                 onClick={() => {
-                    if (orderCount < 10) {
-                        setOrderCount(orderCount + 1);
+                    if (quantity < 10) {
+                        setOrderCount(quantity + 1);
                     }
                 }}
             >

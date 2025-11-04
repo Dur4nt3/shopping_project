@@ -33,6 +33,7 @@
 
     --nav-menu-background: rgba(59, 61, 84, 0.925);
     --header-background: #3b3d54;
+    --header-background-transparent: rgba(59, 61, 84, 0.8);
 
     --nav-menu-text: #f8fafc;
     --navbar-text: #f8fafc;
@@ -62,6 +63,9 @@
     --confirm-green: #00c71b;
 
     --input-placeholder: #3b3d54;
+
+    --modal-veil: rgba(33, 40, 48, 0.4);
+    --modal-box-shadow: -1px 0 7px 0.5px rgba(66, 66, 66, 0.4);
 }
 
 :root:has(body.dark-mode) {
@@ -76,6 +80,7 @@
 
     --nav-menu-background: rgba(47, 52, 71, 0.925);
     --header-background: #2f3447;
+    --header-background-transparent: rgba(47, 52, 71, 0.8);
 
     --highlights-border: rgba(248, 250, 252, 0.225);
 
@@ -98,6 +103,9 @@
     --cancel-red: #780000;
 
     --input-placeholder: #555A78;
+
+    --modal-veil: rgba(5, 10, 20, 0.4);
+    --modal-box-shadow: 0px 0 10px 0.5px #000000;
 }
 
 body {
@@ -130,7 +138,8 @@ a {
     height: 1em;
 }
 
-body:has(header > nav > .nav-menu) {
+body:has(header > nav > .nav-menu),
+body:has(header > nav > .page-modal) {
     overflow: hidden;
 }
 

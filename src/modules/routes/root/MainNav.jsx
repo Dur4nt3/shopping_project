@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router';
 import { Theme } from '../../utilities/Theme';
 
 import NavMenu from './NavMenu';
+import CartModal from './CartModal';
 
 import sunSvg from '../../../assets/media/icons/general/light-mode.svg';
 import moonSvg from '../../../assets/media/icons/general/dark-mode.svg';
@@ -17,11 +18,13 @@ export default function MainNav() {
     const { theme, toggleTheme } = useContext(Theme);
     const location = useLocation();
     const [menuOpen, setMenuStatus] = useState(false);
+    const [ cartOpen, setCartStatus ] = useState(false);
 
     const nextThemeName = theme === 'light' ? 'dark mode' : 'light mode';
 
     return (
         <nav>
+            { cartOpen && <CartModal setCartStatus={setCartStatus} /> }
             {menuOpen && <NavMenu setMenuStatus={setMenuStatus} />}
             <h1 className='site-name'>
                 <NavLink
@@ -65,6 +68,7 @@ export default function MainNav() {
                     <button
                         className='icon-button nav-cart'
                         aria-label='view cart'
+                        onClick={() => setCartStatus(!cartOpen)}
                     >
                         {theme === 'light' ? (
                             <img src={cartLightSvg} alt='view cart' />

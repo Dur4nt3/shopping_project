@@ -7,11 +7,14 @@ import { RouterProvider } from 'react-router';
 import router from './router';
 
 import ThemeProvider from './modules/utilities/Theme';
+import CartProvider from './modules/utilities/Cart';
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <ThemeProvider>
-            <RouterProvider router={router} />
-        </ThemeProvider>
+        <CartProvider>
+            <ThemeProvider>
+                <RouterProvider router={router} />
+            </ThemeProvider>
+        </CartProvider>
     </StrictMode>
 );
