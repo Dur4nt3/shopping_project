@@ -1,0 +1,66 @@
+.app-error-cont {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-error-cont > img {
+    width: 3rem;
+    height: 3rem;
+
+    margin-bottom: 0.5rem;
+}
+
+.app-error-cont h1 {
+    text-align: center;
+    font-size: var(--fs-lg);
+}
+
+.app-error-cont p {
+    text-align: center;
+}
+
+.app-error-cont > p:last-of-type {
+    margin-bottom: 1rem;
+}
+
+.app-error-cont > a {
+    cursor: pointer;
+    padding: 0.25rem 0.75rem;
+    color: var(--header-button-text);
+    border: none;
+    background-color: var(--header-button-background);
+    border-radius: 1rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.app-error-cont > a:hover > img {
+    animation: 0.6s cubic-bezier(1, 0.28, 0.56, 0.89) infinite alternate
+        move-arrow;
+}
+
+@keyframes move-arrow {
+    from {
+        transform: translateX(0rem);
+    }
+    to {
+        transform: translateX(0.5rem);
+    }
+}
+
+@media (min-width: 40rem) {
+    .app-error-cont > img {
+        width: 4rem;
+        height: 4rem;
+
+        margin-bottom: 0.5rem;
+    }
+
+    .app-error-cont p {
+        font-size: var(--fs-base);
+    }
+}

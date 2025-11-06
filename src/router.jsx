@@ -18,10 +18,12 @@ const router = createBrowserRouter([
         path: 'shop',
         element: <Shop />,
         loader: shopLoader,
+        errorElement: <RootError />,
     },
     {
         path: 'checkout',
         element: <Checkout />,
+        errorElement: <RootError />,
     },
 ]);
 

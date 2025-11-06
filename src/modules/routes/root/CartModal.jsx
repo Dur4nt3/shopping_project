@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import { Theme } from '../../utilities/Theme';
 import { Cart } from '../../utilities/Cart';
 
@@ -17,12 +17,13 @@ export default function CartModal({ setCartStatus }) {
     const { theme } = useContext(Theme);
     const { cart, updateCart } = useContext(Cart);
     const navigate = useNavigate();
+    const location = useLocation();
+
     const [cartItems, setCartItems] = useState(
         Object.keys(cart).map((id) => cart[id])
     );
 
     const totalPrice = calculateTotal(cart);
-    // const [totalPrice, setTotalPrice] = useState(calculateTotal(cart));
 
     useEffect(() => {
         setTimeout(() => {
@@ -108,9 +109,15 @@ export default function CartModal({ setCartStatus }) {
                     </div>
                     <button
                         className='checkout-button'
-                        onClick={() => navigate('/checkout')}
+                        onClick={() => {
+                            if (location.pathname === '/checkout') {
+                                exitCart();
+                                return;
+                            }
+                            navigate('/checkout')
+                        }}
                     >
-                        Checkout
+                        To Checkout
                     </button>
                 </div>
             </div>

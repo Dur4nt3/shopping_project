@@ -120,6 +120,11 @@ body {
     display: flex;
 }
 
+#root:has(.app-error-cont) {
+    display: grid;
+    place-items: center;
+}
+
 .inline-img {
     display: inline-block;
     vertical-align: middle;
