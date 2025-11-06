@@ -1,12 +1,12 @@
 import emptyLight from '../../../assets/media/icons/light/empty.svg';
 import emptyDark from '../../../assets/media/icons/dark/empty.svg';
 
-export default function NoCartItems({ theme }) {
+export default function NoCartItems({ theme, variant }) {
     return (
         <div className='no-cart-items-cont'>
             <img src={theme === 'light' ? emptyLight : emptyDark} />
-            <h3 className='no-items-notice'>No Items In Cart...</h3>
-            <h4>Items added to your cart will show up here.</h4>
+            <h3 className='no-items-notice'>{variant === 'cart' ? 'No Items In Cart...' : 'Your Cart Is Empty!'}</h3>
+            <h4>Add items to your cart before checking-out.</h4>
         </div>
     );
 }

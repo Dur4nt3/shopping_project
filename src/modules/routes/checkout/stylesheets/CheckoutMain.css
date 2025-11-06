@@ -1,0 +1,228 @@
+.checkout-main {
+    flex-grow: 1;
+    padding: 0.5rem;
+}
+
+.checkout-main:has(.no-cart-items-cont),
+.checkout-main:has(.pay-form-cont) {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+.order-summary-cont,
+.checkout-main .checkout-button-wrapper {
+    padding: 0.75rem;
+    border: 1px solid var(--filter-button-border);
+    border-radius: 0.35rem;
+}
+
+.order-summary-cont .cart-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.checkout-main .price-total {
+    max-width: 10ch;
+}
+
+.checkout-main .price-one {
+    max-width: 12ch;
+}
+
+.checkout-button-wrapper {
+    gap: 0.25rem;
+}
+
+.checkout-main .checkout-button-wrapper > .all-items-price {
+    border-bottom: none;
+}
+
+.checkout-main .checkout-button-wrapper > div {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fs-base);
+}
+
+.checkout-main .checkout-button-wrapper > div > span:not(.highlight-text) {
+    font-weight: 300;
+}
+
+.checkout-main .checkout-button-wrapper > div > .highlight-text {
+    font-weight: 600;
+}
+
+.pay-form-cont {
+    padding: 0.75rem;
+    border: 1px solid var(--filter-button-border);
+    border-radius: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pay-form-cont > img {
+    width: 3rem;
+    height: 3rem;
+
+    margin-bottom: 0.5rem;
+}
+
+.pay-form-cont > p:last-of-type {
+    margin-bottom: 1rem;
+}
+
+.return-to-checkout {
+    padding: 0.15rem 0;
+    width: 100%;
+    max-width: 280px;
+    border: none;
+    border-radius: 0.35rem;
+    color: var(--navbar-text);
+    background: var(--header-background);
+}
+
+.return-to-checkout:hover {
+    filter: brightness(1.075);
+}
+
+@media (min-width: 40rem) {
+    .checkout-main {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 0.5rem;
+    }
+
+    .order-summary-cont {
+        flex-grow: 1;
+        max-width: 840px;
+    }
+
+    .checkout-main .cart-item {
+        gap: 1rem;
+    }
+
+    .checkout-main .item-img-cont > img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .checkout-main .cart-item-info > h2 {
+        width: 10ch;
+    }
+
+    .checkout-main .price-total {
+        max-width: 15ch;
+    }
+
+    .checkout-main .price-one {
+        max-width: 18ch;
+        margin-bottom: 0.5rem;
+    }
+
+    .checkout-main .cart-item .item-count-cont {
+        margin-top: 0;
+        gap: 0.35rem;
+    }
+
+    .checkout-main .cart-item .item-count-cont div:has(input) {
+        max-width: 2rem;
+    }
+
+    .checkout-main .cart-item .item-count-cont > .increment-order-count,
+    .checkout-main .cart-item .item-count-cont > .decrement-order-count {
+        padding: 0.25rem 0.5rem;
+        width: 1.75rem;
+    }
+
+    .checkout-main .remove-from-cart {
+        width: 18px;
+        height: 18px;
+    }
+
+    .checkout-main .checkout-button-wrapper {
+        position: sticky;
+        top: 1rem;
+        right: 0;
+        margin-top: 0;
+        gap: 0.75rem;
+        max-width: 300px;
+    }
+
+    .checkout-main .checkout-button {
+        align-self: center;
+        max-width: 280px;
+    }
+
+    .pay-form-cont > img {
+        width: 4rem;
+        height: 4rem;
+
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .checkout-main {
+        gap: 1rem;
+    }
+
+    .checkout-main .cart-item {
+        gap: 1.5rem;
+    }
+
+    .checkout-main .item-img-cont > img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .checkout-main .cart-item-info > h2 {
+        width: 15ch;
+    }
+
+    .checkout-main .price-total {
+        max-width: 20ch;
+    }
+
+    .checkout-main .price-one {
+        max-width: 20ch;
+    }
+
+    .checkout-main .cart-item .item-count-cont {
+        gap: 0.5rem;
+    }
+
+    .checkout-main .cart-item .item-count-cont div:has(input) {
+        max-width: 3rem;
+    }
+
+    .checkout-main .cart-item .item-count-cont > .increment-order-count,
+    .checkout-main .cart-item .item-count-cont > .decrement-order-count {
+        padding: 0.25rem 0.6rem;
+        width: 2rem;
+    }
+
+    .checkout-main .remove-from-cart {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (min-width: 64rem) {
+    .checkout-main .cart-item-info > h2 {
+        width: 30ch;
+    }
+}
+
+@media (min-width: 80rem) {
+    .checkout-main {
+        justify-content: center;
+    }
+
+    .checkout-main .cart-item-info > h2 {
+        width: 45ch;
+    }
+}

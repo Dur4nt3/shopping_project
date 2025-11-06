@@ -25,6 +25,11 @@ export default function CartModal({ setCartStatus }) {
 
     const totalPrice = calculateTotal(cart);
 
+    // Ensure cart items are synced with the current "Cart" context
+    useEffect(() => {
+        setCartItems(Object.keys(cart).map((id) => cart[id]));
+    }, [cart]);
+
     useEffect(() => {
         setTimeout(() => {
             document
@@ -61,7 +66,7 @@ export default function CartModal({ setCartStatus }) {
 
     if (cartItems.length === 0) {
         return (
-            <div className="page-modal">
+            <div className='page-modal'>
                 <div className='cart-modal cart-entrance'>
                     <button
                         className='close-modal'
@@ -73,23 +78,26 @@ export default function CartModal({ setCartStatus }) {
                             alt=''
                         />
                     </button>
-                    <NoCartItems theme={theme} />
+                    <NoCartItems theme={theme} variant={'cart'} />
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="page-modal">
+        <div className='page-modal'>
             <div className='cart-modal cart-entrance'>
                 <button
                     className='close-modal'
                     aria-label='close cart'
                     onClick={() => exitCart()}
                 >
-                    <img src={theme === 'light' ? closeLight : closeDark} alt='' />
+                    <img
+                        src={theme === 'light' ? closeLight : closeDark}
+                        alt=''
+                    />
                 </button>
-                <h1>Order Summary</h1>
+                <h1>Your Cart</h1>
                 <div className='added-items-cont'>
                     {cartItems.map((item, index) => (
                         <CartItem
@@ -114,7 +122,7 @@ export default function CartModal({ setCartStatus }) {
                                 exitCart();
                                 return;
                             }
-                            navigate('/checkout')
+                            navigate('/checkout');
                         }}
                     >
                         To Checkout

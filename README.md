@@ -10,6 +10,8 @@ In particular, this project aims to create an online store application.
 
 **You can preview the project at: https://dantescart.netlify.app/**
 
+Note, this project utilizes some "Ant Design" components.
+
 ## Skills Demonstrated
 
 - React

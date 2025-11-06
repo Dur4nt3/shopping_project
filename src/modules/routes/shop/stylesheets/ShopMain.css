@@ -8,6 +8,7 @@
 .shop-main:has(.loading-cont),
 .shop-main:has(.error-cont) {
     display: grid;
+    grid-template-columns: 1fr;
     place-items: center;
 }
 

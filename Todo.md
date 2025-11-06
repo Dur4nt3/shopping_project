@@ -35,6 +35,11 @@
 *Check that the context is adjust correctly to "dark" and that document.body has the class "dark-mode".*
 *This can probably be done by mocking the window.matchMedia property and ensuring it returns exactly the value desired.*
 
+
+**RootError.test.jsx:**
+
+1) Navigate to a non-existent route, ensure that the error page is displayed
+
 ---------
 
 ### Root
@@ -50,9 +55,6 @@
 ### Shop
 
 **ShopFilters.test.jsx:**
-
-1) Test applying multiple filters together - same as above, ensuring data is filtered properly
-2) Separate tests into four files (DataPrice, DataRating, DataCategory, DataQuery, DataAll)
 
 **ShopMain.test.jsx:**
 
@@ -85,30 +87,13 @@
 
 **RootError.jsx:**
 
-1) Design and implement the error page
-
 ---------
 
 ### Root
 
 **ScrollToTop.jsx:**
 
-1) Test within the shop ensure it scrolls to top
-2) Test to see if it disappear after applying a filter
-*Expected bug: will not disappear after applying the first filter.*
-
 **MainNav.jsx:**
-
-1) Implement the cart button functionality (i.e., opening a cart modal when clicking the cart icon)
-
-When a user clicks the cart button a modal will open
-This modal will contain all the items (1 row per item)
-Within each item's container there will be the ability to remove the item, and add/reduce the quantity of the added item (same to the controller in the item container)
-Finally, at the end there will be a total with price of all items and the ability to checkout, which just navigates you to the checkout.
-
-Visual depending on screen width:
-- Mobile modal - slide in/out from top, full screen modal, fully opaque background
-- Large layout modal - slide in/out from side, adjust width according to screen size (not full width), fully opaque background
 
 **NavMenu.css:**
 
@@ -116,9 +101,6 @@ Visual depending on screen width:
 
 1) Potentially add a tooltip to the item name when hovered/focused on
 *This is done to remediate the issue where item names are truncated due to being too long*
-2) Save cart items to the localStorage, load cart items from the localStorage
-*if using localStorage, it will be to be mocked in tests.*
-*For the checkout, load from the cart by default, but if the cart is empty, check the localStorage.*
 
 ---------
 
@@ -128,17 +110,11 @@ Visual depending on screen width:
 
 **ShopItem.jsx:**
 
-1) Create an add to cart function, this function gets an item's id and order count and updates the Cart context
-*Note: If an item is not an integer between 0 and 10, raise an error*
-
-2) Add to cart animation:
-
-When invoking the add to cart button on a certain item, play an animation on the item's add to cart button:
-
-- Error Animation: shake animation + text changes to "Error" + red background
-
-- Success Animation: jello animation + text changes to "Added to Cart" + green background
-
 **ItemCountController.jsx:**
 
-1) Add the 'onPressEnter' property to the number input to add item to cart when pressing enter
+---------
+
+### Checkout
+
+**CheckoutMain.jsx:**
+
