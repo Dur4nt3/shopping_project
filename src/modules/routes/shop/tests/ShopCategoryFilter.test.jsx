@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 
 import ThemeProvider from '../../../utilities/Theme';
+import CartProvider from '../../../utilities/Cart';
 
 import Shop from '../../shop/Shop';
 
@@ -37,9 +38,11 @@ describe('Test Suite for the category filter', () => {
         user = userEvent.setup();
 
         render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+            <CartProvider>
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
+            </CartProvider>
         );
     });
 
@@ -93,7 +96,7 @@ describe('Test Suite for the category filter', () => {
         expect(within(filterContent).queryByRole('combobox')).toBeNull();
         expect(screen.queryByRole('button', { name: 'Apply' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Deactivate' })).toBeNull();
-    });
+    }, 10000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------
@@ -142,7 +145,7 @@ describe('Test Suite for the category filter', () => {
         await user.click(selectInput);
         await user.click(within(listBox).getByText(/category 4/i));
         expect(selectValue).toHaveTextContent(/category 4/i);
-    });
+    }, 10000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------

@@ -1,9 +1,14 @@
 export default function addToCartAnimations(addButtonRef, error = false) {
     if (error === true || error === 'max') {
-        addButtonRef.current.textContent = error === 'max' ? 'Exceeded Max (Check Cart)' : 'Invalid Quantity!';
+        addButtonRef.current.textContent =
+            error === 'max' ? 'Exceeded Max (Check Cart)' : 'Invalid Quantity!';
         addButtonRef.current.classList.add('shake-horizontal', 'error-adding');
         addButtonRef.current.disabled = true;
         setTimeout(() => {
+            if (addButtonRef.current === null) {
+                return;
+            }
+
             addButtonRef.current.textContent = 'Add to Cart';
             addButtonRef.current.classList.remove(
                 'shake-horizontal',
@@ -17,6 +22,10 @@ export default function addToCartAnimations(addButtonRef, error = false) {
     addButtonRef.current.classList.add('success-adding');
     addButtonRef.current.disabled = true;
     setTimeout(() => {
+        if (addButtonRef.current === null) {
+            return;
+        }
+
         addButtonRef.current.textContent = 'Add to Cart';
         addButtonRef.current.classList.remove('success-adding');
         addButtonRef.current.disabled = false;

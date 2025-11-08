@@ -4,6 +4,7 @@ import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
 
 import ThemeProvider from '../../../utilities/Theme';
+import CartProvider from '../../../utilities/Cart';
 
 import HomeHeader from '../HomeHeader';
 import Shop from '../../shop/Shop';
@@ -39,15 +40,25 @@ describe('Test Suite For The Homepage Header', () => {
         user = userEvent.setup();
 
         container = render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+            <CartProvider>
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
+            </CartProvider>
         );
     });
+
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
 
     it('Renders the header (snapshot test)', () => {
         expect(container).toMatchSnapshot();
     });
+
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
 
     it('Navigates to the shop using the header button', async () => {
         const shopLink = screen.getByRole('link', {

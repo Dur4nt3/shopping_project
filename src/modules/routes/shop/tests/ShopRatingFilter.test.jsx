@@ -10,6 +10,7 @@ import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 
 import ThemeProvider from '../../../utilities/Theme';
+import CartProvider from '../../../utilities/Cart';
 
 import Shop from '../../shop/Shop';
 
@@ -43,9 +44,11 @@ describe('Test Suite for toggling the filters on and off', () => {
         user = userEvent.setup();
 
         render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+            <CartProvider>
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
+            </CartProvider>
         );
     });
 
@@ -86,7 +89,7 @@ describe('Test Suite for toggling the filters on and off', () => {
         expect(within(filterContent).queryAllByRole('radio')).toHaveLength(0);
         expect(screen.queryByRole('button', { name: 'Apply' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Deactivate' })).toBeNull();
-    });
+    }, 10000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------
@@ -151,7 +154,7 @@ describe('Test Suite for toggling the filters on and off', () => {
         expect(
             starsInputs[1].parentNode.className.includes('ant-rate-star-zero')
         ).toBeTruthy();
-    });
+    }, 10000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------

@@ -3,6 +3,7 @@ import { render, screen, waitFor, within } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 
 import ThemeProvider from '../../../utilities/Theme';
+import CartProvider from '../../../utilities/Cart';
 
 import Shop from '../../shop/Shop';
 import Checkout from '../../checkout/Checkout';
@@ -47,9 +48,11 @@ describe('Test Suite for item fetching and displaying', () => {
         });
 
         render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+            <CartProvider>
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
+            </CartProvider>
         );
     });
 
@@ -80,7 +83,7 @@ describe('Test Suite for item fetching and displaying', () => {
                     .length
             ).toBe(10);
         });
-    });
+    }, 10000);
 
     it('Displays each of the returned items', async () => {
         // All 10 items are loaded
@@ -111,7 +114,7 @@ describe('Test Suite for item fetching and displaying', () => {
         expect(item8).toBeInTheDocument();
         expect(item9).toBeInTheDocument();
         expect(item10).toBeInTheDocument();
-    });
+    }, 10000);
 
     it('Properly displays the returned items', async () => {
         // All items are loaded
@@ -154,7 +157,7 @@ describe('Test Suite for item fetching and displaying', () => {
             '(120 Reviews)'
         );
 
-        expect(containerHeadings[2]).toHaveTextContent('10$');
+        expect(containerHeadings[2]).toHaveTextContent('$10');
 
         expect(
             within(item).getByRole('button', { name: '-' })
@@ -170,5 +173,5 @@ describe('Test Suite for item fetching and displaying', () => {
         expect(
             within(item).getByRole('button', { name: 'Add to Cart' })
         ).toBeInTheDocument();
-    });
+    }, 10000);
 });

@@ -4,6 +4,7 @@ import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
 
 import ThemeProvider from '../../../utilities/Theme';
+import CartProvider from '../../../utilities/Cart';
 
 import HomeHeader from '../HomeHeader';
 import Shop from '../../shop/Shop';
@@ -44,15 +45,25 @@ describe('Test Suite For The Navbar', () => {
         user = userEvent.setup();
 
         container = render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+            <CartProvider>
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
+            </CartProvider>
         );
     });
+
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
 
     it('Renders the navbar (snapshot test)', () => {
         expect(container).toMatchSnapshot();
     });
+
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
 
     it('Is able to change themes', async () => {
         const darkModeButton = screen.getByRole('button', {
@@ -80,6 +91,10 @@ describe('Test Suite For The Navbar', () => {
         expect(document.body.classList.contains('dark-mode')).toBeFalsy();
     });
 
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+
     it('Opens and closes the menu', async () => {
         const menuButton = screen.getByRole('button', {
             name: /open navigation menu/i,
@@ -105,6 +120,10 @@ describe('Test Suite For The Navbar', () => {
             1
         );
     });
+
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
 
     it('Can navigate to the shop from the menu', async () => {
         const menuButton = screen.getByRole('button', {
@@ -132,6 +151,10 @@ describe('Test Suite For The Navbar', () => {
         ).toBeInTheDocument();
     });
 
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+
     it('Can navigate to the shop from navbar', async () => {
         const shopLink = within(screen.getByTestId('nav-links')).getByRole(
             'link',
@@ -153,6 +176,10 @@ describe('Test Suite For The Navbar', () => {
             screen.getByRole('heading', { name: 'Fresh finds, just for you.' })
         ).toBeInTheDocument();
     });
+
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
 
     it('Can navigate to the checkout from the menu', async () => {
         const menuButton = screen.getByRole('button', {
@@ -180,6 +207,10 @@ describe('Test Suite For The Navbar', () => {
         ).toBeInTheDocument();
     });
 
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+
     it('Can navigate to the checkout from navbar', async () => {
         const shopLink = within(screen.getByTestId('nav-links')).getByRole(
             'link',
@@ -198,9 +229,15 @@ describe('Test Suite For The Navbar', () => {
             screen.getByRole('heading', { name: 'Checkout' })
         ).toBeInTheDocument();
         expect(
-            screen.getByRole('heading', { name: 'Almost yours, just one step away.' })
+            screen.getByRole('heading', {
+                name: 'Almost yours, just one step away.',
+            })
         ).toBeInTheDocument();
     });
+
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
 
     it('Can navigate in between all routes', async () => {
         // DO NOT define any variables as you need to re-fetch the links every time you navigate
@@ -251,6 +288,3 @@ describe('Test Suite For The Navbar', () => {
         expect(router.state.location.pathname).toBe('/');
     });
 });
-
-// TODO
-// Write a test for checking whether or not you can view the cart when clicking the cart icon

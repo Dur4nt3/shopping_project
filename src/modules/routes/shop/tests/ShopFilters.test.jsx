@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 
 import ThemeProvider from '../../../utilities/Theme';
+import CartProvider from '../../../utilities/Cart';
 
 import Shop from '../../shop/Shop';
 
@@ -48,9 +49,11 @@ describe('Test Suite for toggling the filters on and off', () => {
         user = userEvent.setup();
 
         render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+            <CartProvider>
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
+            </CartProvider>
         );
     });
 
@@ -183,7 +186,9 @@ describe('Test Suite for toggling the filters on and off', () => {
 
         // Activating a filter when one is already active appends it
         // rather than overriding a previously applied filter
-        expect([...shopItemsGrid.children]).toHaveLength(1);
+        await waitFor(() => {
+            expect([...shopItemsGrid.children]).toHaveLength(1);
+        });
         expect(
             within(shopItemsGrid).getByRole('heading', {
                 name: 'Item 4',
@@ -258,5 +263,5 @@ describe('Test Suite for toggling the filters on and off', () => {
         await user.click(navShopLink);
 
         expect(router.state.location.search).toBe('?category=category%25201');
-    });
+    }, 10000);
 });

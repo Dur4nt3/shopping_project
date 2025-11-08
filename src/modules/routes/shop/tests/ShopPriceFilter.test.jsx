@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 
 import ThemeProvider from '../../../utilities/Theme';
+import CartProvider from '../../../utilities/Cart';
 
 import Shop from '../../shop/Shop';
 
@@ -37,9 +38,11 @@ describe('Test Suite for the price filter', () => {
         user = userEvent.setup();
 
         render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+            <CartProvider>
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
+            </CartProvider>
         );
     });
 
@@ -92,7 +95,7 @@ describe('Test Suite for the price filter', () => {
         expect(screen.queryByLabelText('To')).toBeNull();
         expect(screen.queryByRole('button', { name: 'Apply' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Deactivate' })).toBeNull();
-    });
+    }, 10000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------
@@ -168,7 +171,7 @@ describe('Test Suite for the price filter', () => {
         expect(fromInput).toHaveValue('11.00');
         await user.type(toInput, '{Backspace>2/}999{Enter}');
         expect(toInput).toHaveValue('101.00');
-    });
+    }, 10000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------

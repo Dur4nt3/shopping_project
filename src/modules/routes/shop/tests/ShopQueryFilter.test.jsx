@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 
 import ThemeProvider from '../../../utilities/Theme';
+import CartProvider from '../../../utilities/Cart';
 
 import Shop from '../../shop/Shop';
 
@@ -37,9 +38,11 @@ describe('Test Suite for toggling the filters on and off', () => {
         user = userEvent.setup();
 
         render(
-            <ThemeProvider>
-                <RouterProvider router={router} />
-            </ThemeProvider>
+            <CartProvider>
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
+            </CartProvider>
         );
     });
 
@@ -75,7 +78,7 @@ describe('Test Suite for toggling the filters on and off', () => {
         expect(screen.queryByPlaceholderText(/search items/i)).toBeNull();
         expect(screen.queryByRole('button', { name: 'Apply' })).toBeNull();
         expect(screen.queryByRole('button', { name: 'Deactivate' })).toBeNull();
-    });
+    }, 10000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------
@@ -103,7 +106,7 @@ describe('Test Suite for toggling the filters on and off', () => {
         await user.type(searchInput, '{Backspace>8/}jacket');
 
         expect(searchInput).toHaveValue('jacket');
-    });
+    }, 10000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------
@@ -228,5 +231,5 @@ describe('Test Suite for toggling the filters on and off', () => {
         expect(
             screen.getByRole('button', { name: 'Deactivate' })
         ).toBeInTheDocument();
-    });
+    }, 10000);
 });

@@ -32,9 +32,11 @@ export default function CartModal({ setCartStatus }) {
 
     useEffect(() => {
         setTimeout(() => {
-            document
-                .querySelector('.cart-modal')
-                .classList.remove('cart-entrance');
+            const cartModal = document.querySelector('.cart-modal');
+
+            if (cartModal !== null) {
+                cartModal.classList.remove('cart-entrance');
+            }
         }, 1000);
     }, []);
 
@@ -67,7 +69,10 @@ export default function CartModal({ setCartStatus }) {
     if (cartItems.length === 0) {
         return (
             <div className='page-modal'>
-                <div className='cart-modal cart-entrance'>
+                <div
+                    className='cart-modal cart-entrance'
+                    data-testid='cart-modal'
+                >
                     <button
                         className='close-modal'
                         aria-label='close cart'
@@ -86,7 +91,7 @@ export default function CartModal({ setCartStatus }) {
 
     return (
         <div className='page-modal'>
-            <div className='cart-modal cart-entrance'>
+            <div className='cart-modal cart-entrance' data-testid='cart-modal'>
                 <button
                     className='close-modal'
                     aria-label='close cart'
@@ -98,7 +103,10 @@ export default function CartModal({ setCartStatus }) {
                     />
                 </button>
                 <h1>Your Cart</h1>
-                <div className='added-items-cont'>
+                <div
+                    className='added-items-cont'
+                    data-testid='added-items-cont'
+                >
                     {cartItems.map((item, index) => (
                         <CartItem
                             key={item.id}
@@ -110,7 +118,7 @@ export default function CartModal({ setCartStatus }) {
                         />
                     ))}
                 </div>
-                <div className='checkout-button-wrapper'>
+                <div className='checkout-button-wrapper' data-testid='checkout-button-wrapper'>
                     <div className='all-items-price'>
                         <span>Subtotal:</span>
                         <span className='highlight-text'>${totalPrice}</span>
