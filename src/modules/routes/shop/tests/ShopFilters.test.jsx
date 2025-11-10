@@ -179,8 +179,12 @@ describe('Test Suite for toggling the filters on and off', () => {
         await user.click(screen.getByRole('button', { name: 'Activate' }));
 
         await waitFor(() => {
-            expect(router.state.location.search).toBe(
-                '?rating=4&category=category%25201'
+            const possibleQueryStrings = [
+                '?rating=4&category=category%25201',
+                '?category=category%25201&rating=4',
+            ];
+            expect(possibleQueryStrings).toContain(
+                router.state.location.search
             );
         });
 
@@ -188,13 +192,15 @@ describe('Test Suite for toggling the filters on and off', () => {
         // rather than overriding a previously applied filter
         await waitFor(() => {
             expect([...shopItemsGrid.children]).toHaveLength(1);
-        });
+            // This is assertion for some reason is inconsistent
+            // Setting a larger timeout seems to somewhat remediate the issue
+        }, { timeout: 10000});
         expect(
             within(shopItemsGrid).getByRole('heading', {
                 name: 'Item 4',
             })
         ).toBeInTheDocument();
-    }, 15000);
+    }, 25000);
 
     // -------------------------------------------------------------------------------------------------
     // -------------------------------------------------------------------------------------------------

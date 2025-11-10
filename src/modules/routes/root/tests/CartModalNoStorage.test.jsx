@@ -8,6 +8,7 @@ import CartProvider from '../../../utilities/Cart';
 
 import Root from '../Root';
 import Shop from '../../shop/Shop';
+import Checkout from '../../checkout/Checkout';
 
 import shopLoader from '../../../utilities/loaders/shopLoader';
 
@@ -43,11 +44,14 @@ const routes = [
         path: '/',
         element: <Root />,
     },
-
     {
         path: 'shop',
         element: <Shop />,
         loader: shopLoader,
+    },
+    {
+        path: '/checkout',
+        element: <Checkout />,
     },
 ];
 
@@ -189,5 +193,40 @@ describe('Test Suite for viewing the cart with no localStorage', () => {
         const modal = screen.getByTestId('cart-modal');
 
         expect(within(modal).getByText('$40')).toBeInTheDocument();
+    });
+
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------
+
+    it('Can utilize the checkout page without localStorage', async () => {
+        await user.type(numberInput1, '{Backspace}2{Enter}');
+        await user.type(numberInput2, '{Backspace}1{Enter}');
+
+        expect(router.state.location.pathname).toBe('/shop');
+
+        // Navigate to the homepage
+        await user.click(screen.getByRole('link', { name: /checkout/i }));
+
+        expect(router.state.location.pathname).toBe('/checkout');
+
+        await waitFor(() => {
+            expect(
+                screen.queryByRole('heading', {
+                    name: 'Your Cart Is Empty!',
+                })
+            ).not.toBeInTheDocument();
+        });
+
+        expect(
+            screen.getByRole('heading', { name: /order summary/i })
+        ).toBeInTheDocument();
+
+        const addedItemsCont = screen.getByTestId('added-items-cont');
+        const addedItems = [...addedItemsCont.children];
+
+        expect(addedItems).toHaveLength(2);
+        expect(within(addedItems[0]).getByRole('heading', { name: /item 1/i }));
+        expect(within(addedItems[1]).getByRole('heading', { name: /item 2/i }));
     });
 });

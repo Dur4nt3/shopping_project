@@ -1,0 +1,116 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test Suite For The Homepage Header > Renders the error page (snapshot test) 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="app-error-cont"
+      >
+        <img
+          alt=""
+          src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23121212'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-bug-icon%20lucide-bug'%3e%3cpath%20d='M12%2020v-9'/%3e%3cpath%20d='M14%207a4%204%200%200%201%204%204v3a6%206%200%200%201-12%200v-3a4%204%200%200%201%204-4z'/%3e%3cpath%20d='M14.12%203.88%2016%202'/%3e%3cpath%20d='M21%2021a4%204%200%200%200-3.81-4'/%3e%3cpath%20d='M21%205a4%204%200%200%201-3.55%203.97'/%3e%3cpath%20d='M22%2013h-4'/%3e%3cpath%20d='M3%2021a4%204%200%200%201%203.81-4'/%3e%3cpath%20d='M3%205a4%204%200%200%200%203.55%203.97'/%3e%3cpath%20d='M6%2013H2'/%3e%3cpath%20d='m8%202%201.88%201.88'/%3e%3cpath%20d='M9%207.13V6a3%203%200%201%201%206%200v1.13'/%3e%3c/svg%3e"
+        />
+        <h1>
+          Unable to complete your request
+        </h1>
+        <p>
+          We hit a snag while processing your request.
+        </p>
+        <p>
+          Return to the homepage and try again!
+        </p>
+        <a
+          data-discover="true"
+          href="/"
+        >
+          Homepage
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-arrow-right-icon%20lucide-arrow-right'%3e%3cpath%20d='M5%2012h14'/%3e%3cpath%20d='m12%205%207%207-7%207'/%3e%3c/svg%3e"
+          />
+        </a>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="app-error-cont"
+    >
+      <img
+        alt=""
+        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23121212'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-bug-icon%20lucide-bug'%3e%3cpath%20d='M12%2020v-9'/%3e%3cpath%20d='M14%207a4%204%200%200%201%204%204v3a6%206%200%200%201-12%200v-3a4%204%200%200%201%204-4z'/%3e%3cpath%20d='M14.12%203.88%2016%202'/%3e%3cpath%20d='M21%2021a4%204%200%200%200-3.81-4'/%3e%3cpath%20d='M21%205a4%204%200%200%201-3.55%203.97'/%3e%3cpath%20d='M22%2013h-4'/%3e%3cpath%20d='M3%2021a4%204%200%200%201%203.81-4'/%3e%3cpath%20d='M3%205a4%204%200%200%200%203.55%203.97'/%3e%3cpath%20d='M6%2013H2'/%3e%3cpath%20d='m8%202%201.88%201.88'/%3e%3cpath%20d='M9%207.13V6a3%203%200%201%201%206%200v1.13'/%3e%3c/svg%3e"
+      />
+      <h1>
+        Unable to complete your request
+      </h1>
+      <p>
+        We hit a snag while processing your request.
+      </p>
+      <p>
+        Return to the homepage and try again!
+      </p>
+      <a
+        data-discover="true"
+        href="/"
+      >
+        Homepage
+        <img
+          src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23f8fafc'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-arrow-right-icon%20lucide-arrow-right'%3e%3cpath%20d='M5%2012h14'/%3e%3cpath%20d='m12%205%207%207-7%207'/%3e%3c/svg%3e"
+        />
+      </a>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

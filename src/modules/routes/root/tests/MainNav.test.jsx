@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
 
@@ -140,9 +140,11 @@ describe('Test Suite For The Navbar', () => {
         await user.click(shopLink);
 
         expect(router.state.location.pathname).toBe('/shop');
-        expect(
-            document.querySelector('.shop-link.currently-visited')
-        ).not.toBeNull();
+        await waitFor(() => {
+            expect(
+                document.querySelector('.shop-link.currently-visited')
+            ).not.toBeNull();
+        });
         expect(
             screen.getByRole('heading', { name: 'Shop' })
         ).toBeInTheDocument();
@@ -164,11 +166,13 @@ describe('Test Suite For The Navbar', () => {
         await user.click(shopLink);
 
         expect(router.state.location.pathname).toBe('/shop');
-        expect(
-            within(screen.getByTestId('nav-links')).getByRole('link', {
-                name: /shop/i,
-            })
-        ).toHaveClass('currently-visited');
+        await waitFor(() => {
+            expect(
+                within(screen.getByTestId('nav-links')).getByRole('link', {
+                    name: /shop/i,
+                })
+            ).toHaveClass('currently-visited');
+        });
         expect(
             screen.getByRole('heading', { name: 'Shop' })
         ).toBeInTheDocument();
@@ -272,7 +276,9 @@ describe('Test Suite For The Navbar', () => {
 
         await user.click(screen.getByRole('link', { name: /pseudo shopper/i }));
 
-        expect(router.state.location.pathname).toBe('/');
+        await waitFor(() => {
+            expect(router.state.location.pathname).toBe('/');
+        });
 
         await user.click(
             screen.getByRole('button', {

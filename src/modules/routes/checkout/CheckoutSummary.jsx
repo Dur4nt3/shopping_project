@@ -11,9 +11,9 @@ export default function CheckoutSummary({
 }) {
     return (
         <>
-            <div className='order-summary-cont'>
+            <div className='order-summary-cont' data-testid='order-summary-cont'>
                 <h1>Order Summary</h1>
-                <div className='added-items-cont'>
+                <div className='added-items-cont' data-testid='added-items-cont'>
                     {cartItems.map((item, index) => (
                         <CartItem
                             key={item.id}
@@ -26,7 +26,7 @@ export default function CheckoutSummary({
                     ))}
                 </div>
             </div>
-            <div className='checkout-button-wrapper'>
+            <div className='checkout-button-wrapper' data-testid='checkout-button-wrapper'>
                 <div className='all-items-price'>
                     <span>Subtotal:</span>
                     <span className='highlight-text'>${totalPrice}</span>

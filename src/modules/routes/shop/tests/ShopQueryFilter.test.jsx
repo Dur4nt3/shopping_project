@@ -154,9 +154,11 @@ describe('Test Suite for toggling the filters on and off', () => {
             expect(router.state.location.search).toBe('?query=');
         });
 
-        expect([
-            ...screen.getByTestId('shop-items-grid').children,
-        ]).toHaveLength(10);
+        await waitFor(() => {
+            expect([
+                ...screen.getByTestId('shop-items-grid').children,
+            ]).toHaveLength(10);
+        });
 
         await user.type(searchInput, 'EM 1{Enter}');
 
