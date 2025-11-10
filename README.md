@@ -8,7 +8,7 @@ This project solidifies the core principles of React.
 
 In particular, this project aims to create an online store application.
 
-**You can preview the project at: https://dantescart.netlify.app/**
+**You can preview the project at: https://dantesecommerce.netlify.app/**
 
 Note, this project utilizes some "Ant Design" components.
 
