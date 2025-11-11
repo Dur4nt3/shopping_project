@@ -16,6 +16,8 @@ Note, this project utilizes some "Ant Design" components.
 
 - React
 
+- Context
+
 - Client-Side Routing
 
 - Single-Page Applications
@@ -24,7 +26,7 @@ Note, this project utilizes some "Ant Design" components.
 
 - Data fetching with React
 
-- Testing Library
+- Testing Library (React)
 
 - Vitest
 
