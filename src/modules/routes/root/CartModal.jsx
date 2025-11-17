@@ -66,10 +66,11 @@ export default function CartModal({ setCartStatus }) {
         return (
             <div className='page-modal'>
                 <div
-                    className='cart-modal cart-entrance'
+                    className={determineCartClass(entranceFinished, exitQueued)}
                     data-testid='cart-modal'
                 >
                     <button
+                        disabled={exitQueued}
                         className='close-modal'
                         aria-label='close cart'
                         onClick={() => exitCart()}
