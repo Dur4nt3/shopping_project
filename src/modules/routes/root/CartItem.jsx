@@ -12,6 +12,15 @@ export default function CartItem({
     handleQuantityAdjustment,
 }) {
     const [quantity, setQuantity] = useState(item.quantity);
+    const [queueRemoval, setQueueRemoval] = useState(false);
+
+    function removeItem() {
+        setQueueRemoval(true);
+
+        setTimeout(() => {
+            handleCartItemRemoval(item.id, index);
+        }, 300)
+    }
 
     function setOrderCount(quantity) {
         if (quantity < 0 || quantity > 10 || quantity === null) {
@@ -23,7 +32,11 @@ export default function CartItem({
     }
 
     return (
-        <div className='cart-item' key={item.id} id={`cart-item-${item.id}`}>
+        <div
+            className={queueRemoval ? 'cart-item fade-out' : 'cart-item'}
+            key={item.id}
+            id={`cart-item-${item.id}`}
+        >
             <div className='item-img-cont'>
                 <img src={item.image} alt={item.title} />
             </div>
@@ -48,7 +61,7 @@ export default function CartItem({
             <button
                 className='remove-from-cart'
                 aria-label='remove item from cart'
-                onClick={() => handleCartItemRemoval(item.id, index)}
+                onClick={() => removeItem()}
             >
                 <img src={theme === 'light' ? closeLight : closeDark} alt='' />
             </button>

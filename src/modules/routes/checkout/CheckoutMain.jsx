@@ -31,42 +31,15 @@ export default function CheckoutMain() {
         totalPrice * 0.05 >= 15 ? Number((totalPrice * 0.05).toFixed(2)) : 15;
 
     function handleCartItemRemoval(itemID, index) {
-        document
-            .querySelector(`#cart-item-${itemID}`)
-            .classList.add('fade-out');
-        setTimeout(() => {
-            const newCartItems = [...cartItems];
-            newCartItems.splice(index, 1);
-            updateCart(cartItems[index], 0, true);
-            setCartItems(newCartItems);
-        }, 300);
+        const newCartItems = [...cartItems];
+        newCartItems.splice(index, 1);
+        updateCart(cartItems[index], 0, true);
+        setCartItems(newCartItems);
     }
 
     function handleQuantityAdjustment(item, quantity) {
         const quantityDelta = quantity - item.quantity;
         updateCart(item, quantityDelta);
-    }
-
-    function displayPayForm() {
-        document.querySelector('.checkout-main').classList.add('fade-out');
-        setTimeout(() => {
-            setPayFormStatus(true);
-            document
-                .querySelector('.checkout-main')
-                .classList.remove('fade-out');
-            document.querySelector('.checkout-main').classList.add('fade-in');
-        }, 525);
-    }
-
-    function hidePayForm() {
-        document.querySelector('.checkout-main').classList.add('fade-out');
-        setTimeout(() => {
-            setPayFormStatus(false);
-            document
-                .querySelector('.checkout-main')
-                .classList.remove('fade-out');
-            document.querySelector('.checkout-main').classList.add('fade-in');
-        }, 525);
     }
 
     if (cartItems.length === 0) {
@@ -80,7 +53,10 @@ export default function CheckoutMain() {
     return (
         <div className='checkout-main'>
             {showPayForm === true ? (
-                <CheckoutPayForm theme={theme} hidePayForm={hidePayForm} />
+                <CheckoutPayForm
+                    theme={theme}
+                    setPayFormStatus={setPayFormStatus}
+                />
             ) : (
                 <CheckoutSummary
                     cartItems={cartItems}
@@ -89,7 +65,7 @@ export default function CheckoutMain() {
                     handleQuantityAdjustment={handleQuantityAdjustment}
                     totalPrice={totalPrice}
                     shippingPrice={shippingPrice}
-                    displayPayForm={displayPayForm}
+                    setPayFormStatus={setPayFormStatus}
                 />
             )}
         </div>

@@ -4,6 +4,7 @@ import { Theme } from '../../utilities/Theme';
 import { Cart } from '../../utilities/Cart';
 
 import calculateTotal from '../../utilities/calculateTotal';
+import determineCartClass from '../../utilities/determineCartClass';
 
 import NoCartItems from './NoCartItems';
 import CartItem from './CartItem';
@@ -25,40 +26,35 @@ export default function CartModal({ setCartStatus }) {
 
     const totalPrice = calculateTotal(cart);
 
+    const [entranceFinished, setEntranceFinished] = useState(false);
+    const [exitQueued, setExitQueue] = useState(false);
+
     // Ensure cart items are synced with the current "Cart" context
     useEffect(() => {
         setCartItems(Object.keys(cart).map((id) => cart[id]));
     }, [cart]);
 
+    // Cleanup the modal classes a certain amount of time after render
     useEffect(() => {
         setTimeout(() => {
-            const cartModal = document.querySelector('.cart-modal');
-
-            if (cartModal !== null) {
-                cartModal.classList.remove('cart-entrance');
+            if (!exitQueued) {
+                setEntranceFinished(true);
             }
         }, 1000);
-    }, []);
+    }, [exitQueued]);
 
     function exitCart() {
-        const cartModal = document.querySelector('.cart-modal');
-        cartModal.querySelector('.close-modal').disabled = true;
-        cartModal.classList.add('cart-exit');
+        setExitQueue(true);
         setTimeout(() => {
             setCartStatus(false);
         }, 600);
     }
 
     function handleCartItemRemoval(itemID, index) {
-        document
-            .querySelector(`#cart-item-${itemID}`)
-            .classList.add('fade-out');
-        setTimeout(() => {
-            const newCartItems = [...cartItems];
-            newCartItems.splice(index, 1);
-            updateCart(cartItems[index], 0, true);
-            setCartItems(newCartItems);
-        }, 300);
+        const newCartItems = [...cartItems];
+        newCartItems.splice(index, 1);
+        updateCart(cartItems[index], 0, true);
+        setCartItems(newCartItems);
     }
 
     function handleQuantityAdjustment(item, quantity) {
@@ -91,8 +87,12 @@ export default function CartModal({ setCartStatus }) {
 
     return (
         <div className='page-modal'>
-            <div className='cart-modal cart-entrance' data-testid='cart-modal'>
+            <div
+                className={determineCartClass(entranceFinished, exitQueued)}
+                data-testid='cart-modal'
+            >
                 <button
+                    disabled={exitQueued}
                     className='close-modal'
                     aria-label='close cart'
                     onClick={() => exitCart()}
@@ -118,7 +118,10 @@ export default function CartModal({ setCartStatus }) {
                         />
                     ))}
                 </div>
-                <div className='checkout-button-wrapper' data-testid='checkout-button-wrapper'>
+                <div
+                    className='checkout-button-wrapper'
+                    data-testid='checkout-button-wrapper'
+                >
                     <div className='all-items-price'>
                         <span>Subtotal:</span>
                         <span className='highlight-text'>${totalPrice}</span>

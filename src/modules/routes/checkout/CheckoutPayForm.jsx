@@ -1,9 +1,21 @@
+import { useState } from 'react';
+
 import checkLight from '../../../assets/media/icons/light/check.svg';
 import checkDark from '../../../assets/media/icons/dark/check.svg';
 
-export default function CheckoutPayForm({ theme, hidePayForm }) {
+export default function CheckoutPayForm({ theme, setPayFormStatus }) {
+    const [queueHide, setQueueHide] = useState(false);
+
+    function hideSummary() {
+        setQueueHide(true);
+
+        setTimeout(() => {
+            setPayFormStatus(false);
+        }, 525);
+    }
+
     return (
-        <div className='pay-form-cont'>
+        <div className={queueHide ? 'pay-form-cont fade-out' : 'pay-form-cont'}>
             <img
                 src={theme === 'light' ? checkLight : checkDark}
                 alt='checkmark'
@@ -14,7 +26,12 @@ export default function CheckoutPayForm({ theme, hidePayForm }) {
                 If you have any feedback, feel free to contact me through the
                 email on my GitHub profile.
             </p>
-            <button className="return-to-checkout" onClick={() => hidePayForm()}>Return to Checkout</button>
+            <button
+                className='return-to-checkout'
+                onClick={() => hideSummary()}
+            >
+                Return to Checkout
+            </button>
         </div>
     );
 }

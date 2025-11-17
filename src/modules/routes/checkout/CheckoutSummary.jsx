@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import CartItem from '../root/CartItem';
 
 export default function CheckoutSummary({
@@ -7,13 +8,33 @@ export default function CheckoutSummary({
     handleQuantityAdjustment,
     totalPrice,
     shippingPrice,
-    displayPayForm,
+    setPayFormStatus,
 }) {
+    const [queueHide, setQueueHide] = useState(false);
+
+    function hideSummary() {
+        setQueueHide(true);
+
+        setTimeout(() => {
+            setPayFormStatus(true);
+        }, 525);
+    }
+
     return (
         <>
-            <div className='order-summary-cont' data-testid='order-summary-cont'>
+            <div
+                className={
+                    queueHide
+                        ? 'order-summary-cont fade-out'
+                        : 'order-summary-cont'
+                }
+                data-testid='order-summary-cont'
+            >
                 <h1>Order Summary</h1>
-                <div className='added-items-cont' data-testid='added-items-cont'>
+                <div
+                    className='added-items-cont'
+                    data-testid='added-items-cont'
+                >
                     {cartItems.map((item, index) => (
                         <CartItem
                             key={item.id}
@@ -26,7 +47,14 @@ export default function CheckoutSummary({
                     ))}
                 </div>
             </div>
-            <div className='checkout-button-wrapper' data-testid='checkout-button-wrapper'>
+            <div
+                className={
+                    queueHide
+                        ? 'checkout-button-wrapper fade-out'
+                        : 'checkout-button-wrapper'
+                }
+                data-testid='checkout-button-wrapper'
+            >
                 <div className='all-items-price'>
                     <span>Subtotal:</span>
                     <span className='highlight-text'>${totalPrice}</span>
@@ -43,7 +71,7 @@ export default function CheckoutSummary({
                 </div>
                 <button
                     className='checkout-button'
-                    onClick={() => displayPayForm()}
+                    onClick={() => hideSummary()}
                 >
                     Pay
                 </button>
